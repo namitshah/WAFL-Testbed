@@ -1,2 +1,28 @@
 # WAFL-Testbed
-A repository for testbed implementations of WAFL projects.
+A repository for testbed implementations of WAFL projects. <br/>
+An extension of the [WAFL-Testbed](https://github.com/jo2lxq/wafl/tree/testbed-develop/WAFL-Testbed) project (WAFL-MLP implementation).<br/>
+### Modify the **Vanilla** Project's code (generalized minimal implementation) <br/> for deploying and testing any WAFL variant.
+## Common Project Structure:
+  - ctrl/
+    - execution_config, parameters.json, deploy.sh, main.py, collect.py, analyze.py
+  - wafl/
+    - config/ (common/ and ID/)
+      - config.json [*], contact_pattern files.
+    - dataset/ (common/ and ID/)
+      - dataset files
+    - src/ (common/ and ID/)
+      - main.py
+  - utils/
+    - supplementary resources
+  - uv.lock, pyproject.toml, miscellaneous resources
+#### [*] Auto-Generated during deployment.
+## Common Experiment Flow
+1. Prepare the project's source code, datasets, contact pattern files, etc.
+2. Specify the principal configuration (execution_config, parameters.json).
+3. Remotely log into the target Control Server (ssh).
+4. Upload the project's source code onto the system.
+5. Generate and activate the virtual environment with uv (from pyproject.toml and uv.lock).
+6. Deploy the project to the Execution Servers (ctrl/deploy.sh).
+7. Start the Experiment Run (python ctrl/main.py).
+8. Collect the results after completion (python ctrl/collect.py).
+9. Analyze and visualize the results (python ctrl/analyze.py).
