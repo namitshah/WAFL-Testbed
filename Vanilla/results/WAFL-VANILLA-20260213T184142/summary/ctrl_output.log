@@ -1,0 +1,616 @@
+2026-02-13 18:41:42,893 - ControlServer - INFO - 📊 Logging configured. File: results/WAFL-VANILLA-20260213T184142/summary/ctrl_output.log
+2026-02-13 18:41:42,893 - ControlServer - INFO - 🎯 Experiment ID: WAFL-VANILLA-20260213T184142
+2026-02-13 18:41:42,893 - ControlServer - INFO - 🚀 Starting experiment: WAFL-VANILLA-20260213T184142 (SELF epochs: 10, WAFL epochs: 50)
+2026-02-13 18:41:42,893 - ControlServer - INFO - 📋 Phase 0: Creating agents and deploying configurations
+2026-02-13 18:41:42,893 - WaflAgent-202 - INFO - 📋 Deploying configurations to agent 202
+2026-02-13 18:41:42,912 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2026-02-13 18:41:42,998 - paramiko.transport - INFO - Authentication (publickey) successful!
+2026-02-13 18:41:43,847 - paramiko.transport.sftp - INFO - [chan 1] Opened sftp connection (server version 3)
+2026-02-13 18:41:43,853 - WaflAgent-202 - INFO - 📋 Deployed agent configuration to agent 202
+2026-02-13 18:41:44,094 - WaflAgent-202 - INFO - 📋 Deployed contact pattern 'contact_pattern.json' to agent 202
+2026-02-13 18:41:44,094 - paramiko.transport.sftp - INFO - [chan 1] sftp session closed.
+2026-02-13 18:41:44,150 - WaflAgent-202 - INFO - ✅ All configurations deployed successfully to agent 202 (2 files)
+2026-02-13 18:41:44,157 - ControlServer - INFO - 🤖 Created and configured agent '202' for 192.168.12.102:10001
+2026-02-13 18:41:44,158 - WaflAgent-203 - INFO - 📋 Deploying configurations to agent 203
+2026-02-13 18:41:44,176 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2026-02-13 18:41:44,308 - paramiko.transport - INFO - Authentication (publickey) successful!
+2026-02-13 18:41:45,159 - paramiko.transport.sftp - INFO - [chan 1] Opened sftp connection (server version 3)
+2026-02-13 18:41:45,165 - WaflAgent-203 - INFO - 📋 Deployed agent configuration to agent 203
+2026-02-13 18:41:45,378 - WaflAgent-203 - INFO - 📋 Deployed contact pattern 'contact_pattern.json' to agent 203
+2026-02-13 18:41:45,378 - paramiko.transport.sftp - INFO - [chan 1] sftp session closed.
+2026-02-13 18:41:45,435 - WaflAgent-203 - INFO - ✅ All configurations deployed successfully to agent 203 (2 files)
+2026-02-13 18:41:45,441 - ControlServer - INFO - 🤖 Created and configured agent '203' for 192.168.12.103:10001
+2026-02-13 18:41:45,441 - ControlServer - INFO - ✅ Created 2 agents successfully with configurations deployed
+2026-02-13 18:41:45,441 - ControlServer - INFO - ✅ All agents created and configured successfully
+2026-02-13 18:41:49,434 - ControlServer - INFO - 🎬 Phase 1: Starting 2 remote processes
+2026-02-13 18:41:49,435 - WaflAgent-202 - INFO - 🚀 Starting remote process for experiment 'WAFL-VANILLA-20260213T184142' on 192.168.12.102
+2026-02-13 18:41:49,454 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2026-02-13 18:41:49,584 - paramiko.transport - INFO - Authentication (publickey) successful!
+2026-02-13 18:41:49,584 - WaflAgent-202 - INFO - 🔪 Killing processes using port 10001
+2026-02-13 18:41:49,855 - WaflAgent-202 - INFO - ✅ Attempted to kill all processes using ctrl port 10001
+2026-02-13 18:41:49,855 - WaflAgent-202 - INFO - 🔪 Killing processes using port 10002
+2026-02-13 18:41:49,998 - WaflAgent-202 - INFO - ✅ Attempted to kill all processes using p2p port 10002
+2026-02-13 18:41:51,110 - WaflAgent-202 - INFO - ✅ Tcpdump installation confirmed!
+2026-02-13 18:41:51,152 - WaflAgent-202 - INFO - 🔪 Tcpdump zombies cleaned up successfully!
+2026-02-13 18:41:51,230 - WaflAgent-202 - INFO - ✅ tcpdump started up successfully!
+2026-02-13 18:41:51,279 - WaflAgent-202 - INFO - ✅ Remote process started successfully with PID: 107672
+2026-02-13 18:41:51,279 - WaflAgent-203 - INFO - 🚀 Starting remote process for experiment 'WAFL-VANILLA-20260213T184142' on 192.168.12.103
+2026-02-13 18:41:51,296 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2026-02-13 18:41:51,410 - paramiko.transport - INFO - Authentication (publickey) successful!
+2026-02-13 18:41:51,410 - WaflAgent-203 - INFO - 🔪 Killing processes using port 10001
+2026-02-13 18:41:51,690 - WaflAgent-203 - INFO - ✅ Attempted to kill all processes using ctrl port 10001
+2026-02-13 18:41:51,690 - WaflAgent-203 - INFO - 🔪 Killing processes using port 10002
+2026-02-13 18:41:51,860 - WaflAgent-203 - INFO - ✅ Attempted to kill all processes using p2p port 10002
+2026-02-13 18:41:52,963 - WaflAgent-203 - INFO - ✅ Tcpdump installation confirmed!
+2026-02-13 18:41:53,006 - WaflAgent-203 - INFO - 🔪 Tcpdump zombies cleaned up successfully!
+2026-02-13 18:41:53,087 - WaflAgent-203 - INFO - ✅ tcpdump started up successfully!
+2026-02-13 18:41:53,136 - WaflAgent-203 - INFO - ✅ Remote process started successfully with PID: 106467
+2026-02-13 18:41:53,136 - ControlServer - INFO - ⏳ Waiting 20 seconds for agents to stabilize...
+2026-02-13 18:42:13,137 - ControlServer - INFO - ✅ All agents started successfully
+2026-02-13 18:42:13,138 - ControlServer - INFO - 🎓 Phase 2: Starting SELF training loop (10 epochs)
+2026-02-13 18:42:13,138 - ControlServer - INFO - 📚 === SELF Epoch 1/10 ===
+2026-02-13 18:42:13,138 - WaflAgent-202 - INFO - 🎯 Starting epoch 1 for agent 202 (phase: SELF)
+2026-02-13 18:42:13,143 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 1 start command
+2026-02-13 18:42:13,143 - WaflAgent-203 - INFO - 🎯 Starting epoch 1 for agent 203 (phase: SELF)
+2026-02-13 18:42:13,156 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 1 start command
+2026-02-13 18:42:13,156 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 1
+2026-02-13 18:42:13,159 - ControlServer - INFO - [202] Log for SELF epoch 00001 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,159 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,159 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:13,159 - ControlServer - INFO - ✅ Agent 202 completed epoch 1 with status: DONE-SELF-00001-2
+2026-02-13 18:42:13,161 - ControlServer - INFO - [203] Log for SELF epoch 00001 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,161 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,161 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:13,161 - ControlServer - INFO - ✅ Agent 203 completed epoch 1 with status: DONE-SELF-00001-2
+2026-02-13 18:42:13,161 - ControlServer - INFO - ✅ All agents completed epoch 1 in 0.0s
+2026-02-13 18:42:13,161 - ControlServer - INFO - ✅ SELF Epoch 1/10 completed successfully
+2026-02-13 18:42:13,161 - ControlServer - INFO - 📚 === SELF Epoch 2/10 ===
+2026-02-13 18:42:13,162 - WaflAgent-202 - INFO - 🎯 Starting epoch 2 for agent 202 (phase: SELF)
+2026-02-13 18:42:13,165 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 2 start command
+2026-02-13 18:42:13,165 - WaflAgent-203 - INFO - 🎯 Starting epoch 2 for agent 203 (phase: SELF)
+2026-02-13 18:42:13,169 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 2 start command
+2026-02-13 18:42:13,169 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 2
+2026-02-13 18:42:13,171 - ControlServer - INFO - [202] Log for SELF epoch 00002 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,171 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,171 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:13,171 - ControlServer - INFO - ✅ Agent 202 completed epoch 2 with status: DONE-SELF-00002-2
+2026-02-13 18:42:13,172 - ControlServer - INFO - [203] Log for SELF epoch 00002 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,173 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,173 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:13,173 - ControlServer - INFO - ✅ Agent 203 completed epoch 2 with status: DONE-SELF-00002-2
+2026-02-13 18:42:13,173 - ControlServer - INFO - ✅ All agents completed epoch 2 in 0.0s
+2026-02-13 18:42:13,173 - ControlServer - INFO - ✅ SELF Epoch 2/10 completed successfully
+2026-02-13 18:42:13,173 - ControlServer - INFO - 📚 === SELF Epoch 3/10 ===
+2026-02-13 18:42:13,173 - WaflAgent-202 - INFO - 🎯 Starting epoch 3 for agent 202 (phase: SELF)
+2026-02-13 18:42:13,176 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 3 start command
+2026-02-13 18:42:13,177 - WaflAgent-203 - INFO - 🎯 Starting epoch 3 for agent 203 (phase: SELF)
+2026-02-13 18:42:13,180 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 3 start command
+2026-02-13 18:42:13,180 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 3
+2026-02-13 18:42:13,182 - ControlServer - INFO - [202] Log for SELF epoch 00003 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,182 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,182 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:13,182 - ControlServer - INFO - ✅ Agent 202 completed epoch 3 with status: DONE-SELF-00003-2
+2026-02-13 18:42:13,184 - ControlServer - INFO - [203] Log for SELF epoch 00003 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,184 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,184 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:13,184 - ControlServer - INFO - ✅ Agent 203 completed epoch 3 with status: DONE-SELF-00003-2
+2026-02-13 18:42:13,184 - ControlServer - INFO - ✅ All agents completed epoch 3 in 0.0s
+2026-02-13 18:42:13,184 - ControlServer - INFO - ✅ SELF Epoch 3/10 completed successfully
+2026-02-13 18:42:13,184 - ControlServer - INFO - 📚 === SELF Epoch 4/10 ===
+2026-02-13 18:42:13,184 - WaflAgent-202 - INFO - 🎯 Starting epoch 4 for agent 202 (phase: SELF)
+2026-02-13 18:42:13,188 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 4 start command
+2026-02-13 18:42:13,188 - WaflAgent-203 - INFO - 🎯 Starting epoch 4 for agent 203 (phase: SELF)
+2026-02-13 18:42:13,192 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 4 start command
+2026-02-13 18:42:13,192 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 4
+2026-02-13 18:42:13,194 - ControlServer - INFO - [202] Log for SELF epoch 00004 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,194 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,194 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:13,194 - ControlServer - INFO - ✅ Agent 202 completed epoch 4 with status: DONE-SELF-00004-2
+2026-02-13 18:42:13,196 - ControlServer - INFO - [203] Log for SELF epoch 00004 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,196 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,196 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:13,196 - ControlServer - INFO - ✅ Agent 203 completed epoch 4 with status: DONE-SELF-00004-2
+2026-02-13 18:42:13,196 - ControlServer - INFO - ✅ All agents completed epoch 4 in 0.0s
+2026-02-13 18:42:13,196 - ControlServer - INFO - ✅ SELF Epoch 4/10 completed successfully
+2026-02-13 18:42:13,196 - ControlServer - INFO - 📚 === SELF Epoch 5/10 ===
+2026-02-13 18:42:13,196 - WaflAgent-202 - INFO - 🎯 Starting epoch 5 for agent 202 (phase: SELF)
+2026-02-13 18:42:13,199 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 5 start command
+2026-02-13 18:42:13,199 - WaflAgent-203 - INFO - 🎯 Starting epoch 5 for agent 203 (phase: SELF)
+2026-02-13 18:42:13,203 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 5 start command
+2026-02-13 18:42:13,203 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 5
+2026-02-13 18:42:13,204 - ControlServer - INFO - [202] Log for SELF epoch 00005 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,205 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,205 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:13,205 - ControlServer - INFO - ✅ Agent 202 completed epoch 5 with status: DONE-SELF-00005-2
+2026-02-13 18:42:13,206 - ControlServer - INFO - [203] Log for SELF epoch 00005 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,206 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,207 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:13,207 - ControlServer - INFO - ✅ Agent 203 completed epoch 5 with status: DONE-SELF-00005-2
+2026-02-13 18:42:13,207 - ControlServer - INFO - ✅ All agents completed epoch 5 in 0.0s
+2026-02-13 18:42:13,207 - ControlServer - INFO - ✅ SELF Epoch 5/10 completed successfully
+2026-02-13 18:42:13,207 - ControlServer - INFO - 📚 === SELF Epoch 6/10 ===
+2026-02-13 18:42:13,207 - WaflAgent-202 - INFO - 🎯 Starting epoch 6 for agent 202 (phase: SELF)
+2026-02-13 18:42:13,210 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 6 start command
+2026-02-13 18:42:13,210 - WaflAgent-203 - INFO - 🎯 Starting epoch 6 for agent 203 (phase: SELF)
+2026-02-13 18:42:13,214 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 6 start command
+2026-02-13 18:42:13,214 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 6
+2026-02-13 18:42:13,215 - ControlServer - INFO - [202] Log for SELF epoch 00006 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,216 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,216 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:13,216 - ControlServer - INFO - ✅ Agent 202 completed epoch 6 with status: DONE-SELF-00006-2
+2026-02-13 18:42:13,218 - ControlServer - INFO - [203] Log for SELF epoch 00006 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,218 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,218 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:13,218 - ControlServer - INFO - ✅ Agent 203 completed epoch 6 with status: DONE-SELF-00006-2
+2026-02-13 18:42:13,218 - ControlServer - INFO - ✅ All agents completed epoch 6 in 0.0s
+2026-02-13 18:42:13,218 - ControlServer - INFO - ✅ SELF Epoch 6/10 completed successfully
+2026-02-13 18:42:13,218 - ControlServer - INFO - 📚 === SELF Epoch 7/10 ===
+2026-02-13 18:42:13,218 - WaflAgent-202 - INFO - 🎯 Starting epoch 7 for agent 202 (phase: SELF)
+2026-02-13 18:42:13,222 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 7 start command
+2026-02-13 18:42:13,222 - WaflAgent-203 - INFO - 🎯 Starting epoch 7 for agent 203 (phase: SELF)
+2026-02-13 18:42:13,226 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 7 start command
+2026-02-13 18:42:13,226 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 7
+2026-02-13 18:42:13,228 - ControlServer - INFO - [202] Log for SELF epoch 00007 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,228 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,228 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:13,228 - ControlServer - INFO - ✅ Agent 202 completed epoch 7 with status: DONE-SELF-00007-2
+2026-02-13 18:42:13,230 - ControlServer - INFO - [203] Log for SELF epoch 00007 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,230 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,230 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:13,230 - ControlServer - INFO - ✅ Agent 203 completed epoch 7 with status: DONE-SELF-00007-2
+2026-02-13 18:42:13,230 - ControlServer - INFO - ✅ All agents completed epoch 7 in 0.0s
+2026-02-13 18:42:13,230 - ControlServer - INFO - ✅ SELF Epoch 7/10 completed successfully
+2026-02-13 18:42:13,230 - ControlServer - INFO - 📚 === SELF Epoch 8/10 ===
+2026-02-13 18:42:13,231 - WaflAgent-202 - INFO - 🎯 Starting epoch 8 for agent 202 (phase: SELF)
+2026-02-13 18:42:13,234 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 8 start command
+2026-02-13 18:42:13,234 - WaflAgent-203 - INFO - 🎯 Starting epoch 8 for agent 203 (phase: SELF)
+2026-02-13 18:42:13,237 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 8 start command
+2026-02-13 18:42:13,237 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 8
+2026-02-13 18:42:13,239 - ControlServer - INFO - [202] Log for SELF epoch 00008 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,239 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,239 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:13,239 - ControlServer - INFO - ✅ Agent 202 completed epoch 8 with status: DONE-SELF-00008-2
+2026-02-13 18:42:13,240 - ControlServer - INFO - [203] Log for SELF epoch 00008 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,240 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,240 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:13,240 - ControlServer - INFO - ✅ Agent 203 completed epoch 8 with status: DONE-SELF-00008-2
+2026-02-13 18:42:13,240 - ControlServer - INFO - ✅ All agents completed epoch 8 in 0.0s
+2026-02-13 18:42:13,241 - ControlServer - INFO - ✅ SELF Epoch 8/10 completed successfully
+2026-02-13 18:42:13,241 - ControlServer - INFO - 📚 === SELF Epoch 9/10 ===
+2026-02-13 18:42:13,241 - WaflAgent-202 - INFO - 🎯 Starting epoch 9 for agent 202 (phase: SELF)
+2026-02-13 18:42:13,244 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 9 start command
+2026-02-13 18:42:13,244 - WaflAgent-203 - INFO - 🎯 Starting epoch 9 for agent 203 (phase: SELF)
+2026-02-13 18:42:13,248 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 9 start command
+2026-02-13 18:42:13,248 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 9
+2026-02-13 18:42:13,250 - ControlServer - INFO - [202] Log for SELF epoch 00009 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,250 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,250 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:13,250 - ControlServer - INFO - ✅ Agent 202 completed epoch 9 with status: DONE-SELF-00009-2
+2026-02-13 18:42:13,251 - ControlServer - INFO - [203] Log for SELF epoch 00009 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,251 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,251 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:13,251 - ControlServer - INFO - ✅ Agent 203 completed epoch 9 with status: DONE-SELF-00009-2
+2026-02-13 18:42:13,252 - ControlServer - INFO - ✅ All agents completed epoch 9 in 0.0s
+2026-02-13 18:42:13,252 - ControlServer - INFO - ✅ SELF Epoch 9/10 completed successfully
+2026-02-13 18:42:13,252 - ControlServer - INFO - 📚 === SELF Epoch 10/10 ===
+2026-02-13 18:42:13,252 - WaflAgent-202 - INFO - 🎯 Starting epoch 10 for agent 202 (phase: SELF)
+2026-02-13 18:42:13,254 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 10 start command
+2026-02-13 18:42:13,255 - WaflAgent-203 - INFO - 🎯 Starting epoch 10 for agent 203 (phase: SELF)
+2026-02-13 18:42:13,258 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 10 start command
+2026-02-13 18:42:13,258 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 10
+2026-02-13 18:42:13,259 - ControlServer - INFO - [202] Log for SELF epoch 00010 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,260 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,260 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:13,260 - ControlServer - INFO - ✅ Agent 202 completed epoch 10 with status: DONE-SELF-00010-2
+2026-02-13 18:42:13,262 - ControlServer - INFO - [203] Log for SELF epoch 00010 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,262 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,262 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:13,262 - ControlServer - INFO - ✅ Agent 203 completed epoch 10 with status: DONE-SELF-00010-2
+2026-02-13 18:42:13,262 - ControlServer - INFO - ✅ All agents completed epoch 10 in 0.0s
+2026-02-13 18:42:13,262 - ControlServer - INFO - ✅ SELF Epoch 10/10 completed successfully
+2026-02-13 18:42:13,262 - ControlServer - INFO - 🎉 All SELF training epochs completed successfully
+2026-02-13 18:42:13,262 - ControlServer - INFO - 🎓 Phase 3: Starting WAFL training loop (50 epochs)
+2026-02-13 18:42:13,262 - ControlServer - INFO - 📚 === WAFL Epoch 1/50 ===
+2026-02-13 18:42:13,262 - WaflAgent-202 - INFO - 🎯 Starting epoch 1 for agent 202 (phase: WAFL)
+2026-02-13 18:42:13,265 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 1 start command
+2026-02-13 18:42:13,265 - WaflAgent-203 - INFO - 🎯 Starting epoch 1 for agent 203 (phase: WAFL)
+2026-02-13 18:42:13,275 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 1 start command
+2026-02-13 18:42:13,275 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 1
+2026-02-13 18:42:13,282 - ControlServer - INFO - [202] Log for WAFL epoch 00001 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,282 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:42:13,285 - ControlServer - INFO - [203] Log for WAFL epoch 00001 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:13,285 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:42:18,291 - ControlServer - INFO - [202] Log for WAFL epoch 00001 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:18,291 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:18,294 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:18,294 - ControlServer - INFO - ✅ Agent 202 completed epoch 1 with status: DONE-WAFL-00001-2
+2026-02-13 18:42:18,304 - ControlServer - INFO - [203] Log for WAFL epoch 00001 started at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:18,304 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:13 2026
+2026-02-13 18:42:18,304 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:18,304 - ControlServer - INFO - ✅ Agent 203 completed epoch 1 with status: DONE-WAFL-00001-2
+2026-02-13 18:42:18,304 - ControlServer - INFO - ✅ All agents completed epoch 1 in 5.0s
+2026-02-13 18:42:18,304 - ControlServer - INFO - ✅ WAFL Epoch 1/50 completed successfully
+2026-02-13 18:42:18,304 - ControlServer - INFO - 📚 === WAFL Epoch 2/50 ===
+2026-02-13 18:42:18,304 - WaflAgent-202 - INFO - 🎯 Starting epoch 2 for agent 202 (phase: WAFL)
+2026-02-13 18:42:18,308 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 2 start command
+2026-02-13 18:42:18,308 - WaflAgent-203 - INFO - 🎯 Starting epoch 2 for agent 203 (phase: WAFL)
+2026-02-13 18:42:18,318 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 2 start command
+2026-02-13 18:42:18,318 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 2
+2026-02-13 18:42:18,329 - ControlServer - INFO - [202] Log for WAFL epoch 00002 started at Fri Feb 13 18:42:18 2026
+2026-02-13 18:42:18,329 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:42:18,330 - ControlServer - INFO - [203] Log for WAFL epoch 00002 started at Fri Feb 13 18:42:18 2026
+2026-02-13 18:42:18,330 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:42:23,336 - ControlServer - INFO - [202] Log for WAFL epoch 00002 started at Fri Feb 13 18:42:18 2026
+2026-02-13 18:42:23,336 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:18 2026
+2026-02-13 18:42:23,339 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:23,339 - ControlServer - INFO - ✅ Agent 202 completed epoch 2 with status: DONE-WAFL-00002-2
+2026-02-13 18:42:23,342 - ControlServer - INFO - [203] Log for WAFL epoch 00002 started at Fri Feb 13 18:42:18 2026
+2026-02-13 18:42:23,342 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:18 2026
+2026-02-13 18:42:23,342 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:23,342 - ControlServer - INFO - ✅ Agent 203 completed epoch 2 with status: DONE-WAFL-00002-2
+2026-02-13 18:42:23,342 - ControlServer - INFO - ✅ All agents completed epoch 2 in 5.0s
+2026-02-13 18:42:23,342 - ControlServer - INFO - ✅ WAFL Epoch 2/50 completed successfully
+2026-02-13 18:42:23,342 - ControlServer - INFO - 📚 === WAFL Epoch 3/50 ===
+2026-02-13 18:42:23,342 - WaflAgent-202 - INFO - 🎯 Starting epoch 3 for agent 202 (phase: WAFL)
+2026-02-13 18:42:23,361 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 3 start command
+2026-02-13 18:42:23,361 - WaflAgent-203 - INFO - 🎯 Starting epoch 3 for agent 203 (phase: WAFL)
+2026-02-13 18:42:23,365 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 3 start command
+2026-02-13 18:42:23,365 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 3
+2026-02-13 18:42:23,367 - ControlServer - INFO - [202] Log for WAFL epoch 00003 started at Fri Feb 13 18:42:23 2026
+2026-02-13 18:42:23,367 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:42:23,381 - ControlServer - INFO - [203] Log for WAFL epoch 00003 started at Fri Feb 13 18:42:23 2026
+2026-02-13 18:42:23,381 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:42:28,387 - ControlServer - INFO - [202] Log for WAFL epoch 00003 started at Fri Feb 13 18:42:23 2026
+2026-02-13 18:42:28,387 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:23 2026
+2026-02-13 18:42:28,387 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:28,387 - ControlServer - INFO - ✅ Agent 202 completed epoch 3 with status: DONE-WAFL-00003-2
+2026-02-13 18:42:28,390 - ControlServer - INFO - [203] Log for WAFL epoch 00003 started at Fri Feb 13 18:42:23 2026
+2026-02-13 18:42:28,390 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:23 2026
+2026-02-13 18:42:28,390 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:28,390 - ControlServer - INFO - ✅ Agent 203 completed epoch 3 with status: DONE-WAFL-00003-2
+2026-02-13 18:42:28,390 - ControlServer - INFO - ✅ All agents completed epoch 3 in 5.0s
+2026-02-13 18:42:28,390 - ControlServer - INFO - ✅ WAFL Epoch 3/50 completed successfully
+2026-02-13 18:42:28,390 - ControlServer - INFO - 📚 === WAFL Epoch 4/50 ===
+2026-02-13 18:42:28,390 - WaflAgent-202 - INFO - 🎯 Starting epoch 4 for agent 202 (phase: WAFL)
+2026-02-13 18:42:28,394 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 4 start command
+2026-02-13 18:42:28,394 - WaflAgent-203 - INFO - 🎯 Starting epoch 4 for agent 203 (phase: WAFL)
+2026-02-13 18:42:28,397 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 4 start command
+2026-02-13 18:42:28,397 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 4
+2026-02-13 18:42:28,412 - ControlServer - INFO - [202] Log for WAFL epoch 00004 started at Fri Feb 13 18:42:28 2026
+2026-02-13 18:42:28,413 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:42:28,416 - ControlServer - INFO - [203] Log for WAFL epoch 00004 started at Fri Feb 13 18:42:28 2026
+2026-02-13 18:42:28,416 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:42:33,420 - ControlServer - INFO - [202] Log for WAFL epoch 00004 started at Fri Feb 13 18:42:28 2026
+2026-02-13 18:42:33,420 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:28 2026
+2026-02-13 18:42:33,421 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:33,423 - ControlServer - INFO - ✅ Agent 202 completed epoch 4 with status: DONE-WAFL-00004-2
+2026-02-13 18:42:33,426 - ControlServer - INFO - [203] Log for WAFL epoch 00004 started at Fri Feb 13 18:42:28 2026
+2026-02-13 18:42:33,427 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:28 2026
+2026-02-13 18:42:33,427 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:33,427 - ControlServer - INFO - ✅ Agent 203 completed epoch 4 with status: DONE-WAFL-00004-2
+2026-02-13 18:42:33,427 - ControlServer - INFO - ✅ All agents completed epoch 4 in 5.0s
+2026-02-13 18:42:33,427 - ControlServer - INFO - ✅ WAFL Epoch 4/50 completed successfully
+2026-02-13 18:42:33,427 - ControlServer - INFO - 📚 === WAFL Epoch 5/50 ===
+2026-02-13 18:42:33,427 - WaflAgent-202 - INFO - 🎯 Starting epoch 5 for agent 202 (phase: WAFL)
+2026-02-13 18:42:33,430 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 5 start command
+2026-02-13 18:42:33,430 - WaflAgent-203 - INFO - 🎯 Starting epoch 5 for agent 203 (phase: WAFL)
+2026-02-13 18:42:33,453 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 5 start command
+2026-02-13 18:42:33,453 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 5
+2026-02-13 18:42:33,455 - ControlServer - INFO - [202] Log for WAFL epoch 00005 started at Fri Feb 13 18:42:33 2026
+2026-02-13 18:42:33,455 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:42:33,457 - ControlServer - INFO - [203] Log for WAFL epoch 00005 started at Fri Feb 13 18:42:33 2026
+2026-02-13 18:42:33,457 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:42:38,463 - ControlServer - INFO - [202] Log for WAFL epoch 00005 started at Fri Feb 13 18:42:33 2026
+2026-02-13 18:42:38,463 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:33 2026
+2026-02-13 18:42:38,463 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:38,463 - ControlServer - INFO - ✅ Agent 202 completed epoch 5 with status: DONE-WAFL-00005-2
+2026-02-13 18:42:38,467 - ControlServer - INFO - [203] Log for WAFL epoch 00005 started at Fri Feb 13 18:42:33 2026
+2026-02-13 18:42:38,467 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:33 2026
+2026-02-13 18:42:38,467 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:38,467 - ControlServer - INFO - ✅ Agent 203 completed epoch 5 with status: DONE-WAFL-00005-2
+2026-02-13 18:42:38,467 - ControlServer - INFO - ✅ All agents completed epoch 5 in 5.0s
+2026-02-13 18:42:38,467 - ControlServer - INFO - ✅ WAFL Epoch 5/50 completed successfully
+2026-02-13 18:42:38,467 - ControlServer - INFO - 📚 === WAFL Epoch 6/50 ===
+2026-02-13 18:42:38,467 - WaflAgent-202 - INFO - 🎯 Starting epoch 6 for agent 202 (phase: WAFL)
+2026-02-13 18:42:38,470 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 6 start command
+2026-02-13 18:42:38,470 - WaflAgent-203 - INFO - 🎯 Starting epoch 6 for agent 203 (phase: WAFL)
+2026-02-13 18:42:38,474 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 6 start command
+2026-02-13 18:42:38,474 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 6
+2026-02-13 18:42:38,500 - ControlServer - INFO - [202] Log for WAFL epoch 00006 started at Fri Feb 13 18:42:38 2026
+2026-02-13 18:42:38,500 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:42:38,502 - ControlServer - INFO - [203] Log for WAFL epoch 00006 started at Fri Feb 13 18:42:38 2026
+2026-02-13 18:42:38,502 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:42:43,508 - ControlServer - INFO - [202] Log for WAFL epoch 00006 started at Fri Feb 13 18:42:38 2026
+2026-02-13 18:42:43,508 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:38 2026
+2026-02-13 18:42:43,508 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:43,508 - ControlServer - INFO - ✅ Agent 202 completed epoch 6 with status: DONE-WAFL-00006-2
+2026-02-13 18:42:43,518 - ControlServer - INFO - [203] Log for WAFL epoch 00006 started at Fri Feb 13 18:42:38 2026
+2026-02-13 18:42:43,518 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:38 2026
+2026-02-13 18:42:43,518 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:43,518 - ControlServer - INFO - ✅ Agent 203 completed epoch 6 with status: DONE-WAFL-00006-2
+2026-02-13 18:42:43,518 - ControlServer - INFO - ✅ All agents completed epoch 6 in 5.0s
+2026-02-13 18:42:43,518 - ControlServer - INFO - ✅ WAFL Epoch 6/50 completed successfully
+2026-02-13 18:42:43,518 - ControlServer - INFO - 📚 === WAFL Epoch 7/50 ===
+2026-02-13 18:42:43,518 - WaflAgent-202 - INFO - 🎯 Starting epoch 7 for agent 202 (phase: WAFL)
+2026-02-13 18:42:43,533 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 7 start command
+2026-02-13 18:42:43,533 - WaflAgent-203 - INFO - 🎯 Starting epoch 7 for agent 203 (phase: WAFL)
+2026-02-13 18:42:43,537 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 7 start command
+2026-02-13 18:42:43,537 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 7
+2026-02-13 18:42:43,556 - ControlServer - INFO - [202] Log for WAFL epoch 00007 started at Fri Feb 13 18:42:43 2026
+2026-02-13 18:42:43,556 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:42:43,571 - ControlServer - INFO - [203] Log for WAFL epoch 00007 started at Fri Feb 13 18:42:43 2026
+2026-02-13 18:42:43,571 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:42:48,582 - ControlServer - INFO - [202] Log for WAFL epoch 00007 started at Fri Feb 13 18:42:43 2026
+2026-02-13 18:42:48,582 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:43 2026
+2026-02-13 18:42:48,583 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:48,586 - ControlServer - INFO - ✅ Agent 202 completed epoch 7 with status: DONE-WAFL-00007-2
+2026-02-13 18:42:48,589 - ControlServer - INFO - [203] Log for WAFL epoch 00007 started at Fri Feb 13 18:42:43 2026
+2026-02-13 18:42:48,589 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:43 2026
+2026-02-13 18:42:48,589 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:48,589 - ControlServer - INFO - ✅ Agent 203 completed epoch 7 with status: DONE-WAFL-00007-2
+2026-02-13 18:42:48,589 - ControlServer - INFO - ✅ All agents completed epoch 7 in 5.0s
+2026-02-13 18:42:48,589 - ControlServer - INFO - ✅ WAFL Epoch 7/50 completed successfully
+2026-02-13 18:42:48,589 - ControlServer - INFO - 📚 === WAFL Epoch 8/50 ===
+2026-02-13 18:42:48,589 - WaflAgent-202 - INFO - 🎯 Starting epoch 8 for agent 202 (phase: WAFL)
+2026-02-13 18:42:48,593 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 8 start command
+2026-02-13 18:42:48,593 - WaflAgent-203 - INFO - 🎯 Starting epoch 8 for agent 203 (phase: WAFL)
+2026-02-13 18:42:48,607 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 8 start command
+2026-02-13 18:42:48,607 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 8
+2026-02-13 18:42:48,630 - ControlServer - INFO - [202] Log for WAFL epoch 00008 started at Fri Feb 13 18:42:48 2026
+2026-02-13 18:42:48,630 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:42:48,636 - ControlServer - INFO - [203] Log for WAFL epoch 00008 started at Fri Feb 13 18:42:48 2026
+2026-02-13 18:42:48,636 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:42:53,648 - ControlServer - INFO - [202] Log for WAFL epoch 00008 started at Fri Feb 13 18:42:48 2026
+2026-02-13 18:42:53,648 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:48 2026
+2026-02-13 18:42:53,651 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:53,651 - ControlServer - INFO - ✅ Agent 202 completed epoch 8 with status: DONE-WAFL-00008-2
+2026-02-13 18:42:53,655 - ControlServer - INFO - [203] Log for WAFL epoch 00008 started at Fri Feb 13 18:42:48 2026
+2026-02-13 18:42:53,655 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:48 2026
+2026-02-13 18:42:53,655 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:53,655 - ControlServer - INFO - ✅ Agent 203 completed epoch 8 with status: DONE-WAFL-00008-2
+2026-02-13 18:42:53,655 - ControlServer - INFO - ✅ All agents completed epoch 8 in 5.0s
+2026-02-13 18:42:53,655 - ControlServer - INFO - ✅ WAFL Epoch 8/50 completed successfully
+2026-02-13 18:42:53,655 - ControlServer - INFO - 📚 === WAFL Epoch 9/50 ===
+2026-02-13 18:42:53,656 - WaflAgent-202 - INFO - 🎯 Starting epoch 9 for agent 202 (phase: WAFL)
+2026-02-13 18:42:53,659 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 9 start command
+2026-02-13 18:42:53,659 - WaflAgent-203 - INFO - 🎯 Starting epoch 9 for agent 203 (phase: WAFL)
+2026-02-13 18:42:53,663 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 9 start command
+2026-02-13 18:42:53,663 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 9
+2026-02-13 18:42:53,676 - ControlServer - INFO - [202] Log for WAFL epoch 00009 started at Fri Feb 13 18:42:53 2026
+2026-02-13 18:42:53,676 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:42:53,703 - ControlServer - INFO - [203] Log for WAFL epoch 00009 started at Fri Feb 13 18:42:53 2026
+2026-02-13 18:42:53,703 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:42:58,715 - ControlServer - INFO - [202] Log for WAFL epoch 00009 started at Fri Feb 13 18:42:53 2026
+2026-02-13 18:42:58,715 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:53 2026
+2026-02-13 18:42:58,715 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:42:58,715 - ControlServer - INFO - ✅ Agent 202 completed epoch 9 with status: DONE-WAFL-00009-2
+2026-02-13 18:42:58,718 - ControlServer - INFO - [203] Log for WAFL epoch 00009 started at Fri Feb 13 18:42:53 2026
+2026-02-13 18:42:58,718 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:53 2026
+2026-02-13 18:42:58,718 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:42:58,718 - ControlServer - INFO - ✅ Agent 203 completed epoch 9 with status: DONE-WAFL-00009-2
+2026-02-13 18:42:58,718 - ControlServer - INFO - ✅ All agents completed epoch 9 in 5.0s
+2026-02-13 18:42:58,718 - ControlServer - INFO - ✅ WAFL Epoch 9/50 completed successfully
+2026-02-13 18:42:58,719 - ControlServer - INFO - 📚 === WAFL Epoch 10/50 ===
+2026-02-13 18:42:58,719 - WaflAgent-202 - INFO - 🎯 Starting epoch 10 for agent 202 (phase: WAFL)
+2026-02-13 18:42:58,722 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 10 start command
+2026-02-13 18:42:58,722 - WaflAgent-203 - INFO - 🎯 Starting epoch 10 for agent 203 (phase: WAFL)
+2026-02-13 18:42:58,727 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 10 start command
+2026-02-13 18:42:58,727 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 10
+2026-02-13 18:42:58,766 - ControlServer - INFO - [202] Log for WAFL epoch 00010 started at Fri Feb 13 18:42:58 2026
+2026-02-13 18:42:58,766 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:42:58,772 - ControlServer - INFO - [203] Log for WAFL epoch 00010 started at Fri Feb 13 18:42:58 2026
+2026-02-13 18:42:58,772 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:43:03,776 - ControlServer - INFO - [202] Log for WAFL epoch 00010 started at Fri Feb 13 18:42:58 2026
+2026-02-13 18:43:03,776 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:42:58 2026
+2026-02-13 18:43:03,776 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:43:03,779 - ControlServer - INFO - ✅ Agent 202 completed epoch 10 with status: DONE-WAFL-00010-2
+2026-02-13 18:43:03,789 - ControlServer - INFO - [203] Log for WAFL epoch 00010 started at Fri Feb 13 18:42:58 2026
+2026-02-13 18:43:03,789 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:42:58 2026
+2026-02-13 18:43:03,789 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:43:03,789 - ControlServer - INFO - ✅ Agent 203 completed epoch 10 with status: DONE-WAFL-00010-2
+2026-02-13 18:43:03,789 - ControlServer - INFO - ✅ All agents completed epoch 10 in 5.0s
+2026-02-13 18:43:03,789 - ControlServer - INFO - ✅ WAFL Epoch 10/50 completed successfully
+2026-02-13 18:43:03,789 - ControlServer - INFO - 📚 === WAFL Epoch 11/50 ===
+2026-02-13 18:43:03,789 - WaflAgent-202 - INFO - 🎯 Starting epoch 11 for agent 202 (phase: WAFL)
+2026-02-13 18:43:03,794 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 11 start command
+2026-02-13 18:43:03,794 - WaflAgent-203 - INFO - 🎯 Starting epoch 11 for agent 203 (phase: WAFL)
+2026-02-13 18:43:03,803 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 11 start command
+2026-02-13 18:43:03,803 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 11
+2026-02-13 18:43:03,846 - ControlServer - INFO - [202] Log for WAFL epoch 00011 started at Fri Feb 13 18:43:03 2026
+2026-02-13 18:43:03,847 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:43:03,848 - ControlServer - INFO - [203] Log for WAFL epoch 00011 started at Fri Feb 13 18:43:03 2026
+2026-02-13 18:43:03,848 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:43:08,853 - ControlServer - INFO - [202] Log for WAFL epoch 00011 started at Fri Feb 13 18:43:03 2026
+2026-02-13 18:43:08,854 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:43:03 2026
+2026-02-13 18:43:08,854 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:43:08,854 - ControlServer - INFO - ✅ Agent 202 completed epoch 11 with status: DONE-WAFL-00011-2
+2026-02-13 18:43:08,863 - ControlServer - INFO - [203] Log for WAFL epoch 00011 started at Fri Feb 13 18:43:03 2026
+2026-02-13 18:43:08,863 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:43:03 2026
+2026-02-13 18:43:08,863 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:43:08,864 - ControlServer - INFO - ✅ Agent 203 completed epoch 11 with status: DONE-WAFL-00011-2
+2026-02-13 18:43:08,864 - ControlServer - INFO - ✅ All agents completed epoch 11 in 5.0s
+2026-02-13 18:43:08,864 - ControlServer - INFO - ✅ WAFL Epoch 11/50 completed successfully
+2026-02-13 18:43:08,864 - ControlServer - INFO - 📚 === WAFL Epoch 12/50 ===
+2026-02-13 18:43:08,864 - WaflAgent-202 - INFO - 🎯 Starting epoch 12 for agent 202 (phase: WAFL)
+2026-02-13 18:43:08,873 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 12 start command
+2026-02-13 18:43:08,873 - WaflAgent-203 - INFO - 🎯 Starting epoch 12 for agent 203 (phase: WAFL)
+2026-02-13 18:43:08,877 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 12 start command
+2026-02-13 18:43:08,877 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 12
+2026-02-13 18:43:08,917 - ControlServer - INFO - [202] Log for WAFL epoch 00012 started at Fri Feb 13 18:43:08 2026
+2026-02-13 18:43:08,917 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:43:08,929 - ControlServer - INFO - [203] Log for WAFL epoch 00012 started at Fri Feb 13 18:43:08 2026
+2026-02-13 18:43:08,929 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:43:13,935 - ControlServer - INFO - [202] Log for WAFL epoch 00012 started at Fri Feb 13 18:43:08 2026
+2026-02-13 18:43:13,935 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:43:08 2026
+2026-02-13 18:43:13,935 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:43:13,935 - ControlServer - INFO - ✅ Agent 202 completed epoch 12 with status: DONE-WAFL-00012-2
+2026-02-13 18:43:13,944 - ControlServer - INFO - [203] Log for WAFL epoch 00012 started at Fri Feb 13 18:43:08 2026
+2026-02-13 18:43:13,944 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:43:08 2026
+2026-02-13 18:43:13,944 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:43:13,944 - ControlServer - INFO - ✅ Agent 203 completed epoch 12 with status: DONE-WAFL-00012-2
+2026-02-13 18:43:13,945 - ControlServer - INFO - ✅ All agents completed epoch 12 in 5.1s
+2026-02-13 18:43:13,945 - ControlServer - INFO - ✅ WAFL Epoch 12/50 completed successfully
+2026-02-13 18:43:13,945 - ControlServer - INFO - 📚 === WAFL Epoch 13/50 ===
+2026-02-13 18:43:13,945 - WaflAgent-202 - INFO - 🎯 Starting epoch 13 for agent 202 (phase: WAFL)
+2026-02-13 18:43:13,969 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 13 start command
+2026-02-13 18:43:13,969 - WaflAgent-203 - INFO - 🎯 Starting epoch 13 for agent 203 (phase: WAFL)
+2026-02-13 18:43:13,974 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 13 start command
+2026-02-13 18:43:13,974 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 13
+2026-02-13 18:43:13,987 - ControlServer - INFO - [202] Log for WAFL epoch 00013 started at Fri Feb 13 18:43:13 2026
+2026-02-13 18:43:13,987 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:43:13,993 - ControlServer - INFO - [203] Log for WAFL epoch 00013 started at Fri Feb 13 18:43:13 2026
+2026-02-13 18:43:13,993 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:43:18,999 - ControlServer - INFO - [202] Log for WAFL epoch 00013 started at Fri Feb 13 18:43:13 2026
+2026-02-13 18:43:18,999 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:43:14 2026
+2026-02-13 18:43:18,999 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:43:18,999 - ControlServer - INFO - ✅ Agent 202 completed epoch 13 with status: DONE-WAFL-00013-2
+2026-02-13 18:43:19,009 - ControlServer - INFO - [203] Log for WAFL epoch 00013 started at Fri Feb 13 18:43:13 2026
+2026-02-13 18:43:19,009 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:43:14 2026
+2026-02-13 18:43:19,009 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:43:19,010 - ControlServer - INFO - ✅ Agent 203 completed epoch 13 with status: DONE-WAFL-00013-2
+2026-02-13 18:43:19,010 - ControlServer - INFO - ✅ All agents completed epoch 13 in 5.0s
+2026-02-13 18:43:19,010 - ControlServer - INFO - ✅ WAFL Epoch 13/50 completed successfully
+2026-02-13 18:43:19,010 - ControlServer - INFO - 📚 === WAFL Epoch 14/50 ===
+2026-02-13 18:43:19,010 - WaflAgent-202 - INFO - 🎯 Starting epoch 14 for agent 202 (phase: WAFL)
+2026-02-13 18:43:19,014 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 14 start command
+2026-02-13 18:43:19,014 - WaflAgent-203 - INFO - 🎯 Starting epoch 14 for agent 203 (phase: WAFL)
+2026-02-13 18:43:19,017 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 14 start command
+2026-02-13 18:43:19,017 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 14
+2026-02-13 18:43:19,025 - ControlServer - INFO - [202] Log for WAFL epoch 00014 started at Fri Feb 13 18:43:19 2026
+2026-02-13 18:43:19,025 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:43:19,045 - ControlServer - INFO - [203] Log for WAFL epoch 00014 started at Fri Feb 13 18:43:19 2026
+2026-02-13 18:43:19,046 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:43:24,056 - ControlServer - INFO - [202] Log for WAFL epoch 00014 started at Fri Feb 13 18:43:19 2026
+2026-02-13 18:43:24,056 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:43:19 2026
+2026-02-13 18:43:24,056 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:43:24,056 - ControlServer - INFO - ✅ Agent 202 completed epoch 14 with status: DONE-WAFL-00014-2
+2026-02-13 18:43:24,066 - ControlServer - INFO - [203] Log for WAFL epoch 00014 started at Fri Feb 13 18:43:19 2026
+2026-02-13 18:43:24,066 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:43:19 2026
+2026-02-13 18:43:24,066 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:43:24,066 - ControlServer - INFO - ✅ Agent 203 completed epoch 14 with status: DONE-WAFL-00014-2
+2026-02-13 18:43:24,066 - ControlServer - INFO - ✅ All agents completed epoch 14 in 5.0s
+2026-02-13 18:43:24,066 - ControlServer - INFO - ✅ WAFL Epoch 14/50 completed successfully
+2026-02-13 18:43:24,066 - ControlServer - INFO - 📚 === WAFL Epoch 15/50 ===
+2026-02-13 18:43:24,066 - WaflAgent-202 - INFO - 🎯 Starting epoch 15 for agent 202 (phase: WAFL)
+2026-02-13 18:43:24,070 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 15 start command
+2026-02-13 18:43:24,070 - WaflAgent-203 - INFO - 🎯 Starting epoch 15 for agent 203 (phase: WAFL)
+2026-02-13 18:43:24,074 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 15 start command
+2026-02-13 18:43:24,074 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 15
+2026-02-13 18:43:24,118 - ControlServer - INFO - [202] Log for WAFL epoch 00015 started at Fri Feb 13 18:43:24 2026
+2026-02-13 18:43:24,119 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:43:24,136 - ControlServer - INFO - [203] Log for WAFL epoch 00015 started at Fri Feb 13 18:43:24 2026
+2026-02-13 18:43:24,136 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:43:29,148 - ControlServer - INFO - [202] Log for WAFL epoch 00015 started at Fri Feb 13 18:43:24 2026
+2026-02-13 18:43:29,148 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:43:24 2026
+2026-02-13 18:43:29,151 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:43:29,151 - ControlServer - INFO - ✅ Agent 202 completed epoch 15 with status: DONE-WAFL-00015-2
+2026-02-13 18:43:29,160 - ControlServer - INFO - [203] Log for WAFL epoch 00015 started at Fri Feb 13 18:43:24 2026
+2026-02-13 18:43:29,160 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:43:24 2026
+2026-02-13 18:43:29,160 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:43:29,161 - ControlServer - INFO - ✅ Agent 203 completed epoch 15 with status: DONE-WAFL-00015-2
+2026-02-13 18:43:29,161 - ControlServer - INFO - ✅ All agents completed epoch 15 in 5.1s
+2026-02-13 18:43:29,161 - ControlServer - INFO - ✅ WAFL Epoch 15/50 completed successfully
+2026-02-13 18:43:29,161 - ControlServer - INFO - 📚 === WAFL Epoch 16/50 ===
+2026-02-13 18:43:29,161 - WaflAgent-202 - INFO - 🎯 Starting epoch 16 for agent 202 (phase: WAFL)
+2026-02-13 18:43:29,170 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 16 start command
+2026-02-13 18:43:29,170 - WaflAgent-203 - INFO - 🎯 Starting epoch 16 for agent 203 (phase: WAFL)
+2026-02-13 18:43:29,190 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 16 start command
+2026-02-13 18:43:29,190 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 16
+2026-02-13 18:43:29,232 - ControlServer - INFO - [202] Log for WAFL epoch 00016 started at Fri Feb 13 18:43:29 2026
+2026-02-13 18:43:29,232 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:43:29,242 - ControlServer - INFO - [203] Log for WAFL epoch 00016 started at Fri Feb 13 18:43:29 2026
+2026-02-13 18:43:29,242 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:43:34,248 - ControlServer - INFO - [202] Log for WAFL epoch 00016 started at Fri Feb 13 18:43:29 2026
+2026-02-13 18:43:34,248 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:43:29 2026
+2026-02-13 18:43:34,251 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:43:34,251 - ControlServer - INFO - ✅ Agent 202 completed epoch 16 with status: DONE-WAFL-00016-2
+2026-02-13 18:43:34,255 - ControlServer - INFO - [203] Log for WAFL epoch 00016 started at Fri Feb 13 18:43:29 2026
+2026-02-13 18:43:34,255 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:43:29 2026
+2026-02-13 18:43:34,255 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:43:34,255 - ControlServer - INFO - ✅ Agent 203 completed epoch 16 with status: DONE-WAFL-00016-2
+2026-02-13 18:43:34,255 - ControlServer - INFO - ✅ All agents completed epoch 16 in 5.1s
+2026-02-13 18:43:34,255 - ControlServer - INFO - ✅ WAFL Epoch 16/50 completed successfully
+2026-02-13 18:43:34,255 - ControlServer - INFO - 📚 === WAFL Epoch 17/50 ===
+2026-02-13 18:43:34,255 - WaflAgent-202 - INFO - 🎯 Starting epoch 17 for agent 202 (phase: WAFL)
+2026-02-13 18:43:34,259 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 17 start command
+2026-02-13 18:43:34,259 - WaflAgent-203 - INFO - 🎯 Starting epoch 17 for agent 203 (phase: WAFL)
+2026-02-13 18:43:34,262 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 17 start command
+2026-02-13 18:43:34,262 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 17
+2026-02-13 18:43:34,270 - ControlServer - INFO - [202] Log for WAFL epoch 00017 started at Fri Feb 13 18:43:34 2026
+2026-02-13 18:43:34,270 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:43:34,322 - ControlServer - INFO - [203] Log for WAFL epoch 00017 started at Fri Feb 13 18:43:34 2026
+2026-02-13 18:43:34,322 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:43:39,334 - ControlServer - INFO - [202] Log for WAFL epoch 00017 started at Fri Feb 13 18:43:34 2026
+2026-02-13 18:43:39,335 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:43:34 2026
+2026-02-13 18:43:39,338 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:43:39,338 - ControlServer - INFO - ✅ Agent 202 completed epoch 17 with status: DONE-WAFL-00017-2
+2026-02-13 18:43:39,342 - ControlServer - INFO - [203] Log for WAFL epoch 00017 started at Fri Feb 13 18:43:34 2026
+2026-02-13 18:43:39,342 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:43:34 2026
+2026-02-13 18:43:39,342 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:43:39,342 - ControlServer - INFO - ✅ Agent 203 completed epoch 17 with status: DONE-WAFL-00017-2
+2026-02-13 18:43:39,342 - ControlServer - INFO - ✅ All agents completed epoch 17 in 5.1s
+2026-02-13 18:43:39,342 - ControlServer - INFO - ✅ WAFL Epoch 17/50 completed successfully
+2026-02-13 18:43:39,342 - ControlServer - INFO - 📚 === WAFL Epoch 18/50 ===
+2026-02-13 18:43:39,343 - WaflAgent-202 - INFO - 🎯 Starting epoch 18 for agent 202 (phase: WAFL)
+2026-02-13 18:43:39,346 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 18 start command
+2026-02-13 18:43:39,346 - WaflAgent-203 - INFO - 🎯 Starting epoch 18 for agent 203 (phase: WAFL)
+2026-02-13 18:43:39,387 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 18 start command
+2026-02-13 18:43:39,387 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 18
+2026-02-13 18:43:39,420 - ControlServer - INFO - [202] Log for WAFL epoch 00018 started at Fri Feb 13 18:43:39 2026
+2026-02-13 18:43:39,420 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:43:39,428 - ControlServer - INFO - [203] Log for WAFL epoch 00018 started at Fri Feb 13 18:43:39 2026
+2026-02-13 18:43:39,428 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:43:44,440 - ControlServer - INFO - [202] Log for WAFL epoch 00018 started at Fri Feb 13 18:43:39 2026
+2026-02-13 18:43:44,440 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:43:39 2026
+2026-02-13 18:43:44,440 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:43:44,440 - ControlServer - INFO - ✅ Agent 202 completed epoch 18 with status: DONE-WAFL-00018-2
+2026-02-13 18:43:44,444 - ControlServer - INFO - [203] Log for WAFL epoch 00018 started at Fri Feb 13 18:43:39 2026
+2026-02-13 18:43:44,444 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:43:39 2026
+2026-02-13 18:43:44,444 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:43:44,444 - ControlServer - INFO - ✅ Agent 203 completed epoch 18 with status: DONE-WAFL-00018-2
+2026-02-13 18:43:44,444 - ControlServer - INFO - ✅ All agents completed epoch 18 in 5.0s
+2026-02-13 18:43:44,444 - ControlServer - INFO - ✅ WAFL Epoch 18/50 completed successfully
+2026-02-13 18:43:44,444 - ControlServer - INFO - 📚 === WAFL Epoch 19/50 ===
+2026-02-13 18:43:44,444 - WaflAgent-202 - INFO - 🎯 Starting epoch 19 for agent 202 (phase: WAFL)
+2026-02-13 18:43:44,508 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 19 start command
+2026-02-13 18:43:44,508 - WaflAgent-203 - INFO - 🎯 Starting epoch 19 for agent 203 (phase: WAFL)
+2026-02-13 18:43:44,575 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 19 start command
+2026-02-13 18:43:44,575 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 19
+2026-02-13 18:43:44,580 - ControlServer - INFO - [202] Log for WAFL epoch 00019 started at Fri Feb 13 18:43:44 2026
+2026-02-13 18:43:44,580 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:43:44,633 - ControlServer - INFO - [203] Log for WAFL epoch 00019 started at Fri Feb 13 18:43:44 2026
+2026-02-13 18:43:44,633 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:43:49,637 - ControlServer - INFO - [202] Log for WAFL epoch 00019 started at Fri Feb 13 18:43:44 2026
+2026-02-13 18:43:49,637 - ControlServer - INFO - [202] Epoch completion successful: True at Fri Feb 13 18:43:44 2026
+2026-02-13 18:43:49,637 - ControlServer - INFO - [202] Learning Thread Status: Finished
+2026-02-13 18:43:49,637 - ControlServer - INFO - ✅ Agent 202 completed epoch 19 with status: DONE-WAFL-00019-2
+2026-02-13 18:43:49,641 - ControlServer - INFO - [203] Log for WAFL epoch 00019 started at Fri Feb 13 18:43:44 2026
+2026-02-13 18:43:49,641 - ControlServer - INFO - [203] Epoch completion successful: True at Fri Feb 13 18:43:44 2026
+2026-02-13 18:43:49,641 - ControlServer - INFO - [203] Learning Thread Status: Finished
+2026-02-13 18:43:49,641 - ControlServer - INFO - ✅ Agent 203 completed epoch 19 with status: DONE-WAFL-00019-2
+2026-02-13 18:43:49,641 - ControlServer - INFO - ✅ All agents completed epoch 19 in 5.1s
+2026-02-13 18:43:49,641 - ControlServer - INFO - ✅ WAFL Epoch 19/50 completed successfully
+2026-02-13 18:43:49,641 - ControlServer - INFO - 📚 === WAFL Epoch 20/50 ===
+2026-02-13 18:43:49,641 - WaflAgent-202 - INFO - 🎯 Starting epoch 20 for agent 202 (phase: WAFL)
+2026-02-13 18:43:49,650 - WaflAgent-202 - INFO - ✅ Agent 202 accepted epoch 20 start command
+2026-02-13 18:43:49,650 - WaflAgent-203 - INFO - 🎯 Starting epoch 20 for agent 203 (phase: WAFL)
+2026-02-13 18:43:49,658 - WaflAgent-203 - INFO - ✅ Agent 203 accepted epoch 20 start command
+2026-02-13 18:43:49,658 - ControlServer - INFO - ⏳ Waiting for all agents to complete epoch 20
+2026-02-13 18:43:49,691 - ControlServer - INFO - [202] Log for WAFL epoch 00020 started at Fri Feb 13 18:43:49 2026
+2026-02-13 18:43:49,691 - ControlServer - INFO - [202] Learning Thread Status: Active
+2026-02-13 18:43:49,715 - ControlServer - INFO - [203] Log for WAFL epoch 00020 started at Fri Feb 13 18:43:49 2026
+2026-02-13 18:43:49,715 - ControlServer - INFO - [203] Learning Thread Status: Active
+2026-02-13 18:43:53,495 - ControlServer - WARNING - ⚠️ Experiment interrupted by user
+2026-02-13 18:43:53,495 - ControlServer - INFO - 🛑 Phase 4: Shutting down all agents
+2026-02-13 18:43:53,495 - ControlServer - WARNING - 🛑 Shutting down 2 agents
+2026-02-13 18:43:53,495 - WaflAgent-202 - WARNING - 🛑 Sending graceful shutdown command to agent 202
+2026-02-13 18:43:59,748 - WaflAgent-202 - INFO - ✅ Agent 202 acknowledged shutdown command
+2026-02-13 18:43:59,764 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2026-02-13 18:43:59,875 - paramiko.transport - INFO - Authentication (publickey) successful!
+2026-02-13 18:44:00,003 - WaflAgent-203 - WARNING - 🛑 Sending graceful shutdown command to agent 203
+2026-02-13 18:44:09,702 - WaflAgent-203 - INFO - ✅ Agent 203 acknowledged shutdown command
+2026-02-13 18:44:09,714 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_9.6p1)
+2026-02-13 18:44:09,816 - paramiko.transport - INFO - Authentication (publickey) successful!
+2026-02-13 18:44:09,946 - ControlServer - INFO - ✅ Graceful shutdown successful for: 202, 203
+2026-02-13 18:44:09,946 - ControlServer - INFO - 🏁 Agent shutdown process completed
+2026-02-13 18:44:09,946 - ControlServer - INFO - 🏁 Experiment WAFL-VANILLA-20260213T184142 finished with status: FAILED

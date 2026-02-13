@@ -1,0 +1,1010 @@
+2026-02-13 18:41:54,470 - CTRL_TCP - INFO - Configuration file './config/config.json' loaded.
+2026-02-13 18:41:54,470 - CTRL_TCP - INFO - All configurations successfully stored in member variables.
+2026-02-13 18:41:54,470 - CTRL_TCP - INFO - Setting up the node with device name: 203
+2026-02-13 18:41:54,470 - ModelSharingUtils - INFO - Initialized the Model Sharing Utils instance.
+2026-02-13 18:41:54,470 - ModelSharingUtils - INFO - 🔗 Socket bound at 192.168.12.103:10002 and listening.
+2026-02-13 18:41:54,470 - ModelSharingUtils - INFO - 🚀 Launched the P2P Transfer Thread.
+2026-02-13 18:41:54,631 - ModelLearningUtils - INFO - Contact pattern loaded: 10000 epochs
+2026-02-13 18:41:54,631 - ModelLearningUtils - INFO - 📊 CSV files created: ./results/WAFL-VANILLA-20260213T184142/learning-data.csv and ./results/WAFL-VANILLA-20260213T184142/network-data.csv
+2026-02-13 18:41:54,631 - ModelLearningUtils - INFO - Initialized the Model Learning Utils instance.
+2026-02-13 18:41:54,632 - CTRL_TCP - INFO - Waiting for the control server to be ready...
+2026-02-13 18:41:54,632 - CTRL_TCP - INFO - 🔗 Socket bound at 192.168.12.103:10001 and listening.
+2026-02-13 18:41:54,632 - CTRL_TCP - INFO - Initialized the CTRL_TCP instance with configuration parameters.
+2026-02-13 18:42:13,152 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:58850.
+2026-02-13 18:42:13,153 - CTRL_TCP - INFO - Received raw command: 'BEGIN-SELF-00001-2026#02#13T18:42:13.143971'
+2026-02-13 18:42:13,160 - CTRL_TCP - INFO - Processing command: 'BEGIN-SELF-00001-2026#02#13T18:42:13.143971'
+2026-02-13 18:42:13,161 - CTRL_TCP - INFO - Start self learning epoch: 00001
+2026-02-13 18:42:13,161 - ModelLearningUtils - INFO - 🧠 Beginning the Self-Learning Epoch: 00001
+2026-02-13 18:42:13,162 - ModelLearningUtils - INFO - 🏁 Completed the Self-Learning Epoch: 00001
+2026-02-13 18:42:13,162 - ModelLearningUtils - INFO - 📉 Training Loss: 0.486235
+2026-02-13 18:42:13,162 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.0393
+2026-02-13 18:42:13,162 - ModelLearningUtils - INFO - 📉 Test Loss: 0.759371
+2026-02-13 18:42:13,162 - ModelLearningUtils - INFO - 📉 Test Loss: 0.7594
+2026-02-13 18:42:13,162 - CTRL_TCP - INFO - Connection with 192.168.12.10:58850 closed.
+2026-02-13 18:42:13,163 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.1519
+2026-02-13 18:42:13,167 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:58856.
+2026-02-13 18:42:13,167 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:13,167 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:13,168 - CTRL_TCP - INFO - Connection with 192.168.12.10:58856 closed.
+2026-02-13 18:42:13,173 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:58872.
+2026-02-13 18:42:13,173 - CTRL_TCP - INFO - Received raw command: 'BEGIN-SELF-00002-2026#02#13T18:42:13.165499'
+2026-02-13 18:42:13,173 - CTRL_TCP - INFO - Processing command: 'BEGIN-SELF-00002-2026#02#13T18:42:13.165499'
+2026-02-13 18:42:13,174 - CTRL_TCP - INFO - Start self learning epoch: 00002
+2026-02-13 18:42:13,175 - ModelLearningUtils - INFO - 🧠 Beginning the Self-Learning Epoch: 00002
+2026-02-13 18:42:13,175 - ModelLearningUtils - INFO - 🏁 Completed the Self-Learning Epoch: 00002
+2026-02-13 18:42:13,175 - ModelLearningUtils - INFO - 📉 Training Loss: 0.406662
+2026-02-13 18:42:13,175 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.6524
+2026-02-13 18:42:13,175 - ModelLearningUtils - INFO - 📉 Test Loss: 0.829105
+2026-02-13 18:42:13,175 - ModelLearningUtils - INFO - 📉 Test Loss: 0.8291
+2026-02-13 18:42:13,175 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.2847
+2026-02-13 18:42:13,176 - CTRL_TCP - INFO - Connection with 192.168.12.10:58872 closed.
+2026-02-13 18:42:13,177 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 0
+2026-02-13 18:42:13,179 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:58886.
+2026-02-13 18:42:13,179 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:13,179 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:13,179 - CTRL_TCP - INFO - Connection with 192.168.12.10:58886 closed.
+2026-02-13 18:42:13,184 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:58892.
+2026-02-13 18:42:13,185 - CTRL_TCP - INFO - Received raw command: 'BEGIN-SELF-00003-2026#02#13T18:42:13.177044'
+2026-02-13 18:42:13,185 - CTRL_TCP - INFO - Processing command: 'BEGIN-SELF-00003-2026#02#13T18:42:13.177044'
+2026-02-13 18:42:13,186 - CTRL_TCP - INFO - Start self learning epoch: 00003
+2026-02-13 18:42:13,186 - ModelLearningUtils - INFO - 🧠 Beginning the Self-Learning Epoch: 00003
+2026-02-13 18:42:13,186 - ModelLearningUtils - INFO - 🏁 Completed the Self-Learning Epoch: 00003
+2026-02-13 18:42:13,186 - ModelLearningUtils - INFO - 📉 Training Loss: 0.753350
+2026-02-13 18:42:13,186 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.0616
+2026-02-13 18:42:13,186 - ModelLearningUtils - INFO - 📉 Test Loss: 0.603008
+2026-02-13 18:42:13,186 - ModelLearningUtils - INFO - 📉 Test Loss: 0.6030
+2026-02-13 18:42:13,186 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.8209
+2026-02-13 18:42:13,187 - CTRL_TCP - INFO - Connection with 192.168.12.10:58892 closed.
+2026-02-13 18:42:13,188 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 1
+2026-02-13 18:42:13,190 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:58900.
+2026-02-13 18:42:13,190 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:13,190 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:13,191 - CTRL_TCP - INFO - Connection with 192.168.12.10:58900 closed.
+2026-02-13 18:42:13,196 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:58902.
+2026-02-13 18:42:13,196 - CTRL_TCP - INFO - Received raw command: 'BEGIN-SELF-00004-2026#02#13T18:42:13.188130'
+2026-02-13 18:42:13,196 - CTRL_TCP - INFO - Processing command: 'BEGIN-SELF-00004-2026#02#13T18:42:13.188130'
+2026-02-13 18:42:13,197 - CTRL_TCP - INFO - Start self learning epoch: 00004
+2026-02-13 18:42:13,197 - ModelLearningUtils - INFO - 🧠 Beginning the Self-Learning Epoch: 00004
+2026-02-13 18:42:13,197 - ModelLearningUtils - INFO - 🏁 Completed the Self-Learning Epoch: 00004
+2026-02-13 18:42:13,198 - ModelLearningUtils - INFO - 📉 Training Loss: 0.707582
+2026-02-13 18:42:13,198 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.1706
+2026-02-13 18:42:13,198 - ModelLearningUtils - INFO - 📉 Test Loss: 0.772509
+2026-02-13 18:42:13,198 - ModelLearningUtils - INFO - 📉 Test Loss: 0.7725
+2026-02-13 18:42:13,198 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.0279
+2026-02-13 18:42:13,198 - CTRL_TCP - INFO - Connection with 192.168.12.10:58902 closed.
+2026-02-13 18:42:13,199 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 2
+2026-02-13 18:42:13,202 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:58906.
+2026-02-13 18:42:13,202 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:13,202 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:13,203 - CTRL_TCP - INFO - Connection with 192.168.12.10:58906 closed.
+2026-02-13 18:42:13,207 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:58922.
+2026-02-13 18:42:13,207 - CTRL_TCP - INFO - Received raw command: 'BEGIN-SELF-00005-2026#02#13T18:42:13.199514'
+2026-02-13 18:42:13,207 - CTRL_TCP - INFO - Processing command: 'BEGIN-SELF-00005-2026#02#13T18:42:13.199514'
+2026-02-13 18:42:13,208 - CTRL_TCP - INFO - Start self learning epoch: 00005
+2026-02-13 18:42:13,208 - ModelLearningUtils - INFO - 🧠 Beginning the Self-Learning Epoch: 00005
+2026-02-13 18:42:13,208 - ModelLearningUtils - INFO - 🏁 Completed the Self-Learning Epoch: 00005
+2026-02-13 18:42:13,209 - ModelLearningUtils - INFO - 📉 Training Loss: 0.369277
+2026-02-13 18:42:13,209 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.1927
+2026-02-13 18:42:13,209 - ModelLearningUtils - INFO - 📉 Test Loss: 0.579843
+2026-02-13 18:42:13,209 - ModelLearningUtils - INFO - 📉 Test Loss: 0.5798
+2026-02-13 18:42:13,209 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.9969
+2026-02-13 18:42:13,209 - CTRL_TCP - INFO - Connection with 192.168.12.10:58922 closed.
+2026-02-13 18:42:13,210 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 3
+2026-02-13 18:42:13,212 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:58936.
+2026-02-13 18:42:13,213 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:13,213 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:13,213 - CTRL_TCP - INFO - Connection with 192.168.12.10:58936 closed.
+2026-02-13 18:42:13,218 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:58938.
+2026-02-13 18:42:13,218 - CTRL_TCP - INFO - Received raw command: 'BEGIN-SELF-00006-2026#02#13T18:42:13.210510'
+2026-02-13 18:42:13,219 - CTRL_TCP - INFO - Processing command: 'BEGIN-SELF-00006-2026#02#13T18:42:13.210510'
+2026-02-13 18:42:13,220 - CTRL_TCP - INFO - Start self learning epoch: 00006
+2026-02-13 18:42:13,220 - ModelLearningUtils - INFO - 🧠 Beginning the Self-Learning Epoch: 00006
+2026-02-13 18:42:13,220 - ModelLearningUtils - INFO - 🏁 Completed the Self-Learning Epoch: 00006
+2026-02-13 18:42:13,220 - ModelLearningUtils - INFO - 📉 Training Loss: 0.832330
+2026-02-13 18:42:13,220 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.3611
+2026-02-13 18:42:13,220 - CTRL_TCP - INFO - Connection with 192.168.12.10:58938 closed.
+2026-02-13 18:42:13,221 - ModelLearningUtils - INFO - 📉 Test Loss: 0.524277
+2026-02-13 18:42:13,221 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 4
+2026-02-13 18:42:13,221 - ModelLearningUtils - INFO - 📉 Test Loss: 0.5243
+2026-02-13 18:42:13,222 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.5861
+2026-02-13 18:42:13,224 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:58944.
+2026-02-13 18:42:13,224 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:13,224 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:13,224 - CTRL_TCP - INFO - Connection with 192.168.12.10:58944 closed.
+2026-02-13 18:42:13,230 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:58958.
+2026-02-13 18:42:13,230 - CTRL_TCP - INFO - Received raw command: 'BEGIN-SELF-00007-2026#02#13T18:42:13.222237'
+2026-02-13 18:42:13,230 - CTRL_TCP - INFO - Processing command: 'BEGIN-SELF-00007-2026#02#13T18:42:13.222237'
+2026-02-13 18:42:13,231 - CTRL_TCP - INFO - Start self learning epoch: 00007
+2026-02-13 18:42:13,231 - ModelLearningUtils - INFO - 🧠 Beginning the Self-Learning Epoch: 00007
+2026-02-13 18:42:13,232 - ModelLearningUtils - INFO - 🏁 Completed the Self-Learning Epoch: 00007
+2026-02-13 18:42:13,232 - ModelLearningUtils - INFO - 📉 Training Loss: 0.649634
+2026-02-13 18:42:13,232 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.4179
+2026-02-13 18:42:13,232 - ModelLearningUtils - INFO - 📉 Test Loss: 0.923084
+2026-02-13 18:42:13,232 - ModelLearningUtils - INFO - 📉 Test Loss: 0.9231
+2026-02-13 18:42:13,232 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.0735
+2026-02-13 18:42:13,233 - CTRL_TCP - INFO - Connection with 192.168.12.10:58958 closed.
+2026-02-13 18:42:13,233 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 5
+2026-02-13 18:42:13,236 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:58972.
+2026-02-13 18:42:13,236 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:13,237 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:13,237 - CTRL_TCP - INFO - Connection with 192.168.12.10:58972 closed.
+2026-02-13 18:42:13,242 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:58986.
+2026-02-13 18:42:13,242 - CTRL_TCP - INFO - Received raw command: 'BEGIN-SELF-00008-2026#02#13T18:42:13.234305'
+2026-02-13 18:42:13,242 - CTRL_TCP - INFO - Processing command: 'BEGIN-SELF-00008-2026#02#13T18:42:13.234305'
+2026-02-13 18:42:13,243 - CTRL_TCP - INFO - Start self learning epoch: 00008
+2026-02-13 18:42:13,243 - ModelLearningUtils - INFO - 🧠 Beginning the Self-Learning Epoch: 00008
+2026-02-13 18:42:13,243 - ModelLearningUtils - INFO - 🏁 Completed the Self-Learning Epoch: 00008
+2026-02-13 18:42:13,243 - ModelLearningUtils - INFO - 📉 Training Loss: 0.359909
+2026-02-13 18:42:13,243 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.7150
+2026-02-13 18:42:13,243 - ModelLearningUtils - INFO - 📉 Test Loss: 0.032562
+2026-02-13 18:42:13,243 - ModelLearningUtils - INFO - 📉 Test Loss: 0.0326
+2026-02-13 18:42:13,243 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.2996
+2026-02-13 18:42:13,244 - CTRL_TCP - INFO - Connection with 192.168.12.10:58986 closed.
+2026-02-13 18:42:13,245 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 6
+2026-02-13 18:42:13,247 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:58994.
+2026-02-13 18:42:13,247 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:13,247 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:13,247 - CTRL_TCP - INFO - Connection with 192.168.12.10:58994 closed.
+2026-02-13 18:42:13,252 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:59010.
+2026-02-13 18:42:13,252 - CTRL_TCP - INFO - Received raw command: 'BEGIN-SELF-00009-2026#02#13T18:42:13.244839'
+2026-02-13 18:42:13,253 - CTRL_TCP - INFO - Processing command: 'BEGIN-SELF-00009-2026#02#13T18:42:13.244839'
+2026-02-13 18:42:13,253 - CTRL_TCP - INFO - Start self learning epoch: 00009
+2026-02-13 18:42:13,254 - ModelLearningUtils - INFO - 🧠 Beginning the Self-Learning Epoch: 00009
+2026-02-13 18:42:13,254 - ModelLearningUtils - INFO - 🏁 Completed the Self-Learning Epoch: 00009
+2026-02-13 18:42:13,254 - ModelLearningUtils - INFO - 📉 Training Loss: 0.420767
+2026-02-13 18:42:13,254 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.4451
+2026-02-13 18:42:13,254 - ModelLearningUtils - INFO - 📉 Test Loss: 0.070043
+2026-02-13 18:42:13,254 - ModelLearningUtils - INFO - 📉 Test Loss: 0.0700
+2026-02-13 18:42:13,254 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.3272
+2026-02-13 18:42:13,255 - CTRL_TCP - INFO - Connection with 192.168.12.10:59010 closed.
+2026-02-13 18:42:13,256 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 7
+2026-02-13 18:42:13,258 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:59016.
+2026-02-13 18:42:13,258 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:13,258 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:13,258 - CTRL_TCP - INFO - Connection with 192.168.12.10:59016 closed.
+2026-02-13 18:42:13,262 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:59024.
+2026-02-13 18:42:13,263 - CTRL_TCP - INFO - Received raw command: 'BEGIN-SELF-00010-2026#02#13T18:42:13.255002'
+2026-02-13 18:42:13,263 - CTRL_TCP - INFO - Processing command: 'BEGIN-SELF-00010-2026#02#13T18:42:13.255002'
+2026-02-13 18:42:13,263 - CTRL_TCP - INFO - Start self learning epoch: 00010
+2026-02-13 18:42:13,264 - ModelLearningUtils - INFO - 🧠 Beginning the Self-Learning Epoch: 00010
+2026-02-13 18:42:13,264 - ModelLearningUtils - INFO - 🏁 Completed the Self-Learning Epoch: 00010
+2026-02-13 18:42:13,264 - ModelLearningUtils - INFO - 📉 Training Loss: 0.116130
+2026-02-13 18:42:13,264 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.9490
+2026-02-13 18:42:13,264 - ModelLearningUtils - INFO - 📉 Test Loss: 0.608272
+2026-02-13 18:42:13,264 - ModelLearningUtils - INFO - 📉 Test Loss: 0.6083
+2026-02-13 18:42:13,264 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.0048
+2026-02-13 18:42:13,265 - CTRL_TCP - INFO - Connection with 192.168.12.10:59024 closed.
+2026-02-13 18:42:13,265 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 8
+2026-02-13 18:42:13,268 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:59036.
+2026-02-13 18:42:13,268 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:13,268 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:13,268 - CTRL_TCP - INFO - Connection with 192.168.12.10:59036 closed.
+2026-02-13 18:42:13,273 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:53644.
+2026-02-13 18:42:13,273 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:42:13,273 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:42:13,273 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:59050.
+2026-02-13 18:42:13,279 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00001-2026#02#13T18:42:13.265510'
+2026-02-13 18:42:13,279 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00001-2026#02#13T18:42:13.265510'
+2026-02-13 18:42:13,280 - CTRL_TCP - INFO - Start WAFL learning epoch: 00001
+2026-02-13 18:42:13,280 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00001
+2026-02-13 18:42:13,281 - CTRL_TCP - INFO - Connection with 192.168.12.10:59050 closed.
+2026-02-13 18:42:13,282 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 9
+2026-02-13 18:42:13,289 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:42:13,289 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:13,289 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:42:13,289 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:13,289 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:42:13,289 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:13,289 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:42:13,290 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:13,290 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:42:13,290 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:13,290 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:42:13,290 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:13,290 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:42:13,290 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:13,290 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:42:13,290 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:13,290 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:42:13,290 - ModelLearningUtils - INFO - 📉 Training Loss: 0.436802
+2026-02-13 18:42:13,290 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.6480
+2026-02-13 18:42:13,291 - ModelLearningUtils - INFO - 📉 Test Loss: 0.828518
+2026-02-13 18:42:13,291 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:59062.
+2026-02-13 18:42:13,291 - ModelLearningUtils - INFO - 📉 Test Loss: 0.8285
+2026-02-13 18:42:13,291 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:13,291 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:13,291 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.0896
+2026-02-13 18:42:13,292 - CTRL_TCP - INFO - Connection with 192.168.12.10:59062 closed.
+2026-02-13 18:42:13,292 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00001
+2026-02-13 18:42:18,304 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:44924.
+2026-02-13 18:42:18,304 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:18,309 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:18,310 - CTRL_TCP - INFO - Connection with 192.168.12.10:44924 closed.
+2026-02-13 18:42:18,316 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:53656.
+2026-02-13 18:42:18,316 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:44932.
+2026-02-13 18:42:18,317 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00002-2026#02#13T18:42:18.308942'
+2026-02-13 18:42:18,317 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00002-2026#02#13T18:42:18.308942'
+2026-02-13 18:42:18,318 - CTRL_TCP - INFO - Start WAFL learning epoch: 00002
+2026-02-13 18:42:18,318 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00002
+2026-02-13 18:42:18,324 - CTRL_TCP - INFO - Connection with 192.168.12.10:44932 closed.
+2026-02-13 18:42:18,332 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:42:18,332 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:42:18,332 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 10
+2026-02-13 18:42:18,337 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:44942.
+2026-02-13 18:42:18,337 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:18,337 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:18,337 - CTRL_TCP - INFO - Connection with 192.168.12.10:44942 closed.
+2026-02-13 18:42:18,337 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:42:18,338 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:18,338 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:42:18,338 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:18,338 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:42:18,338 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:18,338 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:42:18,338 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:18,338 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:42:18,338 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:18,338 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:42:18,338 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:18,338 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:42:18,338 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:18,338 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:42:18,338 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:18,338 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:42:18,338 - ModelLearningUtils - INFO - 📉 Training Loss: 0.381400
+2026-02-13 18:42:18,338 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.2206
+2026-02-13 18:42:18,338 - ModelLearningUtils - INFO - 📉 Test Loss: 0.873965
+2026-02-13 18:42:18,338 - ModelLearningUtils - INFO - 📉 Test Loss: 0.8740
+2026-02-13 18:42:18,338 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.9079
+2026-02-13 18:42:18,338 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00002
+2026-02-13 18:42:23,348 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:44950.
+2026-02-13 18:42:23,348 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:23,349 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:23,349 - CTRL_TCP - INFO - Connection with 192.168.12.10:44950 closed.
+2026-02-13 18:42:23,359 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:41452.
+2026-02-13 18:42:23,369 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:42:23,369 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:42:23,369 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:44952.
+2026-02-13 18:42:23,370 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00003-2026#02#13T18:42:23.361358'
+2026-02-13 18:42:23,370 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00003-2026#02#13T18:42:23.361358'
+2026-02-13 18:42:23,371 - CTRL_TCP - INFO - Start WAFL learning epoch: 00003
+2026-02-13 18:42:23,371 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00003
+2026-02-13 18:42:23,372 - CTRL_TCP - INFO - Connection with 192.168.12.10:44952 closed.
+2026-02-13 18:42:23,387 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:44962.
+2026-02-13 18:42:23,387 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:42:23,387 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 11
+2026-02-13 18:42:23,387 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:23,388 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:23,388 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:23,388 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:42:23,388 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:23,388 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:42:23,388 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:23,388 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:42:23,388 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:23,388 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:42:23,388 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:23,388 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:42:23,388 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:23,388 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:42:23,388 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:23,388 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:42:23,388 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:23,388 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:42:23,388 - ModelLearningUtils - INFO - 📉 Training Loss: 0.496594
+2026-02-13 18:42:23,388 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.3386
+2026-02-13 18:42:23,388 - ModelLearningUtils - INFO - 📉 Test Loss: 0.857835
+2026-02-13 18:42:23,388 - ModelLearningUtils - INFO - 📉 Test Loss: 0.8578
+2026-02-13 18:42:23,388 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.1952
+2026-02-13 18:42:23,388 - CTRL_TCP - INFO - Connection with 192.168.12.10:44962 closed.
+2026-02-13 18:42:23,388 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00003
+2026-02-13 18:42:28,396 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:60428.
+2026-02-13 18:42:28,396 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:28,396 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:28,397 - CTRL_TCP - INFO - Connection with 192.168.12.10:60428 closed.
+2026-02-13 18:42:28,401 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:41464.
+2026-02-13 18:42:28,402 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:60430.
+2026-02-13 18:42:28,402 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00004-2026#02#13T18:42:28.394511'
+2026-02-13 18:42:28,402 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00004-2026#02#13T18:42:28.394511'
+2026-02-13 18:42:28,403 - CTRL_TCP - INFO - Start WAFL learning epoch: 00004
+2026-02-13 18:42:28,404 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00004
+2026-02-13 18:42:28,404 - CTRL_TCP - INFO - Connection with 192.168.12.10:60430 closed.
+2026-02-13 18:42:28,422 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 12
+2026-02-13 18:42:28,423 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:60444.
+2026-02-13 18:42:28,423 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:28,423 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:28,423 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:42:28,423 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:42:28,423 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:42:28,423 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:28,423 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:42:28,423 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:28,423 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:42:28,423 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:28,423 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:42:28,423 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:28,423 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:42:28,423 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:28,423 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:42:28,423 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:28,423 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:42:28,423 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:28,423 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:42:28,423 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:28,423 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:42:28,423 - ModelLearningUtils - INFO - 📉 Training Loss: 0.936803
+2026-02-13 18:42:28,423 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.0057
+2026-02-13 18:42:28,423 - ModelLearningUtils - INFO - 📉 Test Loss: 0.033417
+2026-02-13 18:42:28,423 - ModelLearningUtils - INFO - 📉 Test Loss: 0.0334
+2026-02-13 18:42:28,424 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.0472
+2026-02-13 18:42:28,424 - CTRL_TCP - INFO - Connection with 192.168.12.10:60444 closed.
+2026-02-13 18:42:28,424 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00004
+2026-02-13 18:42:33,432 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:60452.
+2026-02-13 18:42:33,433 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:33,433 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:33,433 - CTRL_TCP - INFO - Connection with 192.168.12.10:60452 closed.
+2026-02-13 18:42:33,439 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:60464.
+2026-02-13 18:42:33,439 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00005-2026#02#13T18:42:33.430881'
+2026-02-13 18:42:33,439 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00005-2026#02#13T18:42:33.430881'
+2026-02-13 18:42:33,440 - CTRL_TCP - INFO - Start WAFL learning epoch: 00005
+2026-02-13 18:42:33,441 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00005
+2026-02-13 18:42:33,451 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:40988.
+2026-02-13 18:42:33,464 - CTRL_TCP - INFO - Connection with 192.168.12.10:60464 closed.
+2026-02-13 18:42:33,464 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:60476.
+2026-02-13 18:42:33,464 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:33,464 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:33,464 - CTRL_TCP - INFO - Connection with 192.168.12.10:60476 closed.
+2026-02-13 18:42:33,465 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:42:33,465 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:42:33,465 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 13
+2026-02-13 18:42:33,465 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:33,465 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:42:33,465 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:42:33,465 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:33,465 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:42:33,465 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:33,465 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:42:33,465 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:33,465 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:42:33,465 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:33,465 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:42:33,465 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:33,465 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:42:33,465 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:33,465 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:42:33,465 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:33,465 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:42:33,466 - ModelLearningUtils - INFO - 📉 Training Loss: 0.000153
+2026-02-13 18:42:33,466 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.8572
+2026-02-13 18:42:33,466 - ModelLearningUtils - INFO - 📉 Test Loss: 0.169017
+2026-02-13 18:42:33,466 - ModelLearningUtils - INFO - 📉 Test Loss: 0.1690
+2026-02-13 18:42:33,466 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.2508
+2026-02-13 18:42:33,466 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00005
+2026-02-13 18:42:38,473 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:33694.
+2026-02-13 18:42:38,473 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:38,473 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:38,474 - CTRL_TCP - INFO - Connection with 192.168.12.10:33694 closed.
+2026-02-13 18:42:38,478 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:33702.
+2026-02-13 18:42:38,479 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00006-2026#02#13T18:42:38.470932'
+2026-02-13 18:42:38,479 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00006-2026#02#13T18:42:38.470932'
+2026-02-13 18:42:38,479 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:40998.
+2026-02-13 18:42:38,480 - CTRL_TCP - INFO - Start WAFL learning epoch: 00006
+2026-02-13 18:42:38,481 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00006
+2026-02-13 18:42:38,481 - CTRL_TCP - INFO - Connection with 192.168.12.10:33702 closed.
+2026-02-13 18:42:38,492 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:42:38,492 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:42:38,509 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:33714.
+2026-02-13 18:42:38,509 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:38,509 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:38,509 - CTRL_TCP - INFO - Connection with 192.168.12.10:33714 closed.
+2026-02-13 18:42:38,509 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:42:38,509 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:38,510 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:42:38,510 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:38,510 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:42:38,510 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:38,510 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:42:38,510 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:38,510 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:42:38,510 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:38,510 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:42:38,510 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:38,510 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:42:38,510 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:38,510 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:42:38,510 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:38,510 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:42:38,510 - ModelLearningUtils - INFO - 📉 Training Loss: 0.791550
+2026-02-13 18:42:38,510 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.7892
+2026-02-13 18:42:38,510 - ModelLearningUtils - INFO - 📉 Test Loss: 0.100518
+2026-02-13 18:42:38,510 - ModelLearningUtils - INFO - 📉 Test Loss: 0.1005
+2026-02-13 18:42:38,510 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.6536
+2026-02-13 18:42:38,510 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 14
+2026-02-13 18:42:38,510 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00006
+2026-02-13 18:42:43,518 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:33716.
+2026-02-13 18:42:43,518 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:43,524 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:43,524 - CTRL_TCP - INFO - Connection with 192.168.12.10:33716 closed.
+2026-02-13 18:42:43,530 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:37162.
+2026-02-13 18:42:43,540 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:42:43,540 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:42:43,541 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:33726.
+2026-02-13 18:42:43,541 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00007-2026#02#13T18:42:43.533402'
+2026-02-13 18:42:43,541 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00007-2026#02#13T18:42:43.533402'
+2026-02-13 18:42:43,542 - CTRL_TCP - INFO - Start WAFL learning epoch: 00007
+2026-02-13 18:42:43,543 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00007
+2026-02-13 18:42:43,548 - CTRL_TCP - INFO - Connection with 192.168.12.10:33726 closed.
+2026-02-13 18:42:43,573 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:33732.
+2026-02-13 18:42:43,573 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:43,573 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:43,578 - CTRL_TCP - INFO - Connection with 192.168.12.10:33732 closed.
+2026-02-13 18:42:43,578 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 15
+2026-02-13 18:42:43,578 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:42:43,578 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:43,578 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:42:43,578 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:43,578 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:42:43,578 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:43,579 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:42:43,579 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:43,579 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:42:43,579 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:43,579 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:42:43,579 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:43,579 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:42:43,579 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:43,579 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:42:43,579 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:43,579 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:42:43,579 - ModelLearningUtils - INFO - 📉 Training Loss: 0.422414
+2026-02-13 18:42:43,579 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.8255
+2026-02-13 18:42:43,579 - ModelLearningUtils - INFO - 📉 Test Loss: 0.021668
+2026-02-13 18:42:43,579 - ModelLearningUtils - INFO - 📉 Test Loss: 0.0217
+2026-02-13 18:42:43,579 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.0420
+2026-02-13 18:42:43,579 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00007
+2026-02-13 18:42:48,595 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:39618.
+2026-02-13 18:42:48,595 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:48,595 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:48,596 - CTRL_TCP - INFO - Connection with 192.168.12.10:39618 closed.
+2026-02-13 18:42:48,600 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:37166.
+2026-02-13 18:42:48,600 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:42:48,601 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:42:48,601 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:39634.
+2026-02-13 18:42:48,601 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00008-2026#02#13T18:42:48.593187'
+2026-02-13 18:42:48,601 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00008-2026#02#13T18:42:48.593187'
+2026-02-13 18:42:48,613 - CTRL_TCP - INFO - Start WAFL learning epoch: 00008
+2026-02-13 18:42:48,613 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00008
+2026-02-13 18:42:48,634 - CTRL_TCP - INFO - Connection with 192.168.12.10:39634 closed.
+2026-02-13 18:42:48,642 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:39644.
+2026-02-13 18:42:48,642 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:48,642 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:48,643 - CTRL_TCP - INFO - Connection with 192.168.12.10:39644 closed.
+2026-02-13 18:42:48,643 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 16
+2026-02-13 18:42:48,643 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:42:48,643 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:48,643 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:42:48,643 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:48,643 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:42:48,643 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:48,643 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:42:48,643 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:48,643 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:42:48,643 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:48,643 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:42:48,643 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:48,643 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:42:48,643 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:48,643 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:42:48,643 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:48,643 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:42:48,643 - ModelLearningUtils - INFO - 📉 Training Loss: 0.859784
+2026-02-13 18:42:48,643 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.0986
+2026-02-13 18:42:48,643 - ModelLearningUtils - INFO - 📉 Test Loss: 0.188324
+2026-02-13 18:42:48,643 - ModelLearningUtils - INFO - 📉 Test Loss: 0.1883
+2026-02-13 18:42:48,643 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.6099
+2026-02-13 18:42:48,643 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00008
+2026-02-13 18:42:53,661 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:39646.
+2026-02-13 18:42:53,661 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:53,661 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:53,662 - CTRL_TCP - INFO - Connection with 192.168.12.10:39646 closed.
+2026-02-13 18:42:53,667 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:34984.
+2026-02-13 18:42:53,667 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:39654.
+2026-02-13 18:42:53,668 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00009-2026#02#13T18:42:53.659599'
+2026-02-13 18:42:53,668 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00009-2026#02#13T18:42:53.659599'
+2026-02-13 18:42:53,669 - CTRL_TCP - INFO - Start WAFL learning epoch: 00009
+2026-02-13 18:42:53,669 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00009
+2026-02-13 18:42:53,670 - CTRL_TCP - INFO - Connection with 192.168.12.10:39654 closed.
+2026-02-13 18:42:53,675 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:42:53,675 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:42:53,692 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:39662.
+2026-02-13 18:42:53,704 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:53,704 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:53,709 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:42:53,712 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:53,712 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:42:53,709 - CTRL_TCP - INFO - Connection with 192.168.12.10:39662 closed.
+2026-02-13 18:42:53,712 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:53,712 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 17
+2026-02-13 18:42:53,713 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:42:53,713 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:53,713 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:42:53,713 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:53,713 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:42:53,713 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:53,713 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:42:53,713 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:53,713 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:42:53,713 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:53,713 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:42:53,713 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:53,713 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:42:53,713 - ModelLearningUtils - INFO - 📉 Training Loss: 0.209857
+2026-02-13 18:42:53,713 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.1296
+2026-02-13 18:42:53,713 - ModelLearningUtils - INFO - 📉 Test Loss: 0.710327
+2026-02-13 18:42:53,713 - ModelLearningUtils - INFO - 📉 Test Loss: 0.7103
+2026-02-13 18:42:53,713 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.5062
+2026-02-13 18:42:53,713 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00009
+2026-02-13 18:42:58,724 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:57380.
+2026-02-13 18:42:58,724 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:58,724 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:58,725 - CTRL_TCP - INFO - Connection with 192.168.12.10:57380 closed.
+2026-02-13 18:42:58,730 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:34998.
+2026-02-13 18:42:58,730 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:57384.
+2026-02-13 18:42:58,730 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:42:58,731 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00010-2026#02#13T18:42:58.722786'
+2026-02-13 18:42:58,731 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:42:58,731 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00010-2026#02#13T18:42:58.722786'
+2026-02-13 18:42:58,733 - CTRL_TCP - INFO - Start WAFL learning epoch: 00010
+2026-02-13 18:42:58,733 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00010
+2026-02-13 18:42:58,734 - CTRL_TCP - INFO - Connection with 192.168.12.10:57384 closed.
+2026-02-13 18:42:58,777 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:57386.
+2026-02-13 18:42:58,778 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:42:58,778 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 18
+2026-02-13 18:42:58,779 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:42:58,779 - CTRL_TCP - INFO - Connection with 192.168.12.10:57386 closed.
+2026-02-13 18:42:58,779 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:42:58,779 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:58,779 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:42:58,779 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:58,779 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:42:58,779 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:58,779 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:42:58,779 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:58,779 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:42:58,779 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:58,779 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:42:58,779 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:58,779 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:42:58,779 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:58,779 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:42:58,779 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:42:58,779 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:42:58,779 - ModelLearningUtils - INFO - 📉 Training Loss: 0.602511
+2026-02-13 18:42:58,779 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.8194
+2026-02-13 18:42:58,779 - ModelLearningUtils - INFO - 📉 Test Loss: 0.933143
+2026-02-13 18:42:58,779 - ModelLearningUtils - INFO - 📉 Test Loss: 0.9331
+2026-02-13 18:42:58,779 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.8329
+2026-02-13 18:42:58,779 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00010
+2026-02-13 18:43:03,789 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:57388.
+2026-02-13 18:43:03,789 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:03,794 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:03,795 - CTRL_TCP - INFO - Connection with 192.168.12.10:57388 closed.
+2026-02-13 18:43:03,802 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:33306.
+2026-02-13 18:43:03,802 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:57400.
+2026-02-13 18:43:03,803 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00011-2026#02#13T18:43:03.794502'
+2026-02-13 18:43:03,803 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00011-2026#02#13T18:43:03.794502'
+2026-02-13 18:43:03,804 - CTRL_TCP - INFO - Start WAFL learning epoch: 00011
+2026-02-13 18:43:03,804 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00011
+2026-02-13 18:43:03,815 - CTRL_TCP - INFO - Connection with 192.168.12.10:57400 closed.
+2026-02-13 18:43:03,826 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:43:03,835 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:43:03,855 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 19
+2026-02-13 18:43:03,855 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:57406.
+2026-02-13 18:43:03,855 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:03,855 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:03,855 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:43:03,855 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:03,855 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:43:03,855 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:03,855 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:43:03,855 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:03,855 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:43:03,855 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:03,855 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:43:03,855 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:03,855 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:43:03,855 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:03,855 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:43:03,855 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:03,855 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:43:03,855 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:03,855 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:43:03,855 - ModelLearningUtils - INFO - 📉 Training Loss: 0.789051
+2026-02-13 18:43:03,855 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.6566
+2026-02-13 18:43:03,855 - ModelLearningUtils - INFO - 📉 Test Loss: 0.706755
+2026-02-13 18:43:03,855 - ModelLearningUtils - INFO - 📉 Test Loss: 0.7068
+2026-02-13 18:43:03,855 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.7746
+2026-02-13 18:43:03,855 - CTRL_TCP - INFO - Connection with 192.168.12.10:57406 closed.
+2026-02-13 18:43:03,856 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00011
+2026-02-13 18:43:08,864 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:57224.
+2026-02-13 18:43:08,864 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:08,864 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:08,870 - CTRL_TCP - INFO - Connection with 192.168.12.10:57224 closed.
+2026-02-13 18:43:08,875 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:33314.
+2026-02-13 18:43:08,880 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:43:08,880 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:43:08,882 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:57236.
+2026-02-13 18:43:08,882 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00012-2026#02#13T18:43:08.873849'
+2026-02-13 18:43:08,882 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00012-2026#02#13T18:43:08.873849'
+2026-02-13 18:43:08,883 - CTRL_TCP - INFO - Start WAFL learning epoch: 00012
+2026-02-13 18:43:08,883 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00012
+2026-02-13 18:43:08,884 - CTRL_TCP - INFO - Connection with 192.168.12.10:57236 closed.
+2026-02-13 18:43:08,930 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:57246.
+2026-02-13 18:43:08,930 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:08,930 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:08,936 - CTRL_TCP - INFO - Connection with 192.168.12.10:57246 closed.
+2026-02-13 18:43:08,937 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 20
+2026-02-13 18:43:08,937 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:43:08,937 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:08,937 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:43:08,937 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:08,937 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:43:08,937 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:08,937 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:43:08,937 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:08,937 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:43:08,938 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:08,938 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:43:08,938 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:08,938 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:43:08,938 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:08,938 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:43:08,938 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:08,938 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:43:08,938 - ModelLearningUtils - INFO - 📉 Training Loss: 0.859376
+2026-02-13 18:43:08,938 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.2131
+2026-02-13 18:43:08,938 - ModelLearningUtils - INFO - 📉 Test Loss: 0.860575
+2026-02-13 18:43:08,938 - ModelLearningUtils - INFO - 📉 Test Loss: 0.8606
+2026-02-13 18:43:08,938 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.6892
+2026-02-13 18:43:08,938 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00012
+2026-02-13 18:43:13,945 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:57256.
+2026-02-13 18:43:13,945 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:13,951 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:13,951 - CTRL_TCP - INFO - Connection with 192.168.12.10:57256 closed.
+2026-02-13 18:43:13,962 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:58456.
+2026-02-13 18:43:13,977 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:43:13,977 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:43:13,977 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:57272.
+2026-02-13 18:43:13,978 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00013-2026#02#13T18:43:13.969822'
+2026-02-13 18:43:13,978 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00013-2026#02#13T18:43:13.969822'
+2026-02-13 18:43:13,979 - CTRL_TCP - INFO - Start WAFL learning epoch: 00013
+2026-02-13 18:43:13,979 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00013
+2026-02-13 18:43:13,980 - CTRL_TCP - INFO - Connection with 192.168.12.10:57272 closed.
+2026-02-13 18:43:14,000 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:57282.
+2026-02-13 18:43:14,000 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:14,000 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:14,000 - CTRL_TCP - INFO - Connection with 192.168.12.10:57282 closed.
+2026-02-13 18:43:14,034 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:43:14,035 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 21
+2026-02-13 18:43:14,035 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:14,035 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:43:14,035 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:14,035 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:43:14,035 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:14,035 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:43:14,035 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:14,035 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:43:14,035 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:14,035 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:43:14,035 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:14,035 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:43:14,035 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:14,035 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:43:14,035 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:14,035 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:43:14,035 - ModelLearningUtils - INFO - 📉 Training Loss: 0.262532
+2026-02-13 18:43:14,035 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.0826
+2026-02-13 18:43:14,035 - ModelLearningUtils - INFO - 📉 Test Loss: 0.551751
+2026-02-13 18:43:14,035 - ModelLearningUtils - INFO - 📉 Test Loss: 0.5518
+2026-02-13 18:43:14,035 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.4035
+2026-02-13 18:43:14,035 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00013
+2026-02-13 18:43:19,009 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:43240.
+2026-02-13 18:43:19,009 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:19,015 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:19,016 - CTRL_TCP - INFO - Connection with 192.168.12.10:43240 closed.
+2026-02-13 18:43:19,022 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:43244.
+2026-02-13 18:43:19,022 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00014-2026#02#13T18:43:19.014297'
+2026-02-13 18:43:19,022 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00014-2026#02#13T18:43:19.014297'
+2026-02-13 18:43:19,024 - CTRL_TCP - INFO - Start WAFL learning epoch: 00014
+2026-02-13 18:43:19,024 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00014
+2026-02-13 18:43:19,024 - CTRL_TCP - INFO - Connection with 192.168.12.10:43244 closed.
+2026-02-13 18:43:19,040 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:43258.
+2026-02-13 18:43:19,040 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:19,040 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:19,047 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:58466.
+2026-02-13 18:43:19,052 - CTRL_TCP - INFO - Connection with 192.168.12.10:43258 closed.
+2026-02-13 18:43:19,057 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:43:19,057 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:43:19,080 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:43:19,080 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:19,080 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:43:19,080 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:19,080 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:43:19,080 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:19,080 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:43:19,080 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:19,080 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:43:19,080 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:19,080 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:43:19,080 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:19,080 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:43:19,080 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:19,080 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:43:19,084 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:19,084 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:43:19,084 - ModelLearningUtils - INFO - 📉 Training Loss: 0.747553
+2026-02-13 18:43:19,085 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.7516
+2026-02-13 18:43:19,085 - ModelLearningUtils - INFO - 📉 Test Loss: 0.704892
+2026-02-13 18:43:19,085 - ModelLearningUtils - INFO - 📉 Test Loss: 0.7049
+2026-02-13 18:43:19,085 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.1492
+2026-02-13 18:43:19,085 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 22
+2026-02-13 18:43:19,086 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00014
+2026-02-13 18:43:24,066 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:43272.
+2026-02-13 18:43:24,066 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:24,072 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:24,072 - CTRL_TCP - INFO - Connection with 192.168.12.10:43272 closed.
+2026-02-13 18:43:24,078 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:52510.
+2026-02-13 18:43:24,078 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:43278.
+2026-02-13 18:43:24,079 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00015-2026#02#13T18:43:24.070505'
+2026-02-13 18:43:24,079 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00015-2026#02#13T18:43:24.070505'
+2026-02-13 18:43:24,080 - CTRL_TCP - INFO - Start WAFL learning epoch: 00015
+2026-02-13 18:43:24,080 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00015
+2026-02-13 18:43:24,086 - CTRL_TCP - INFO - Connection with 192.168.12.10:43278 closed.
+2026-02-13 18:43:24,091 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:43:24,091 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:43:24,132 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:43294.
+2026-02-13 18:43:24,142 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:24,142 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:24,142 - CTRL_TCP - INFO - Connection with 192.168.12.10:43294 closed.
+2026-02-13 18:43:24,142 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:43:24,149 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:24,149 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:43:24,149 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:24,150 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:43:24,150 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:24,150 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:43:24,150 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:24,150 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:43:24,150 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:24,150 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:43:24,150 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:24,150 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:43:24,150 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:24,150 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:43:24,150 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:24,150 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:43:24,150 - ModelLearningUtils - INFO - 📉 Training Loss: 0.001955
+2026-02-13 18:43:24,150 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.0085
+2026-02-13 18:43:24,150 - ModelLearningUtils - INFO - 📉 Test Loss: 0.166997
+2026-02-13 18:43:24,150 - ModelLearningUtils - INFO - 📉 Test Loss: 0.1670
+2026-02-13 18:43:24,150 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.2201
+2026-02-13 18:43:24,151 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 23
+2026-02-13 18:43:24,151 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00015
+2026-02-13 18:43:29,161 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:39918.
+2026-02-13 18:43:29,161 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:29,166 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:29,167 - CTRL_TCP - INFO - Connection with 192.168.12.10:39918 closed.
+2026-02-13 18:43:29,172 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:52518.
+2026-02-13 18:43:29,178 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:39924.
+2026-02-13 18:43:29,179 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00016-2026#02#13T18:43:29.170876'
+2026-02-13 18:43:29,179 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00016-2026#02#13T18:43:29.170876'
+2026-02-13 18:43:29,180 - CTRL_TCP - INFO - Start WAFL learning epoch: 00016
+2026-02-13 18:43:29,180 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00016
+2026-02-13 18:43:29,197 - CTRL_TCP - INFO - Connection with 192.168.12.10:39924 closed.
+2026-02-13 18:43:29,202 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:43:29,202 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:43:29,248 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:39926.
+2026-02-13 18:43:29,248 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 24
+2026-02-13 18:43:29,248 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:29,248 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:29,248 - CTRL_TCP - INFO - Connection with 192.168.12.10:39926 closed.
+2026-02-13 18:43:29,248 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:43:29,248 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:29,248 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:43:29,248 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:29,248 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:43:29,248 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:29,248 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:43:29,248 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:29,248 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:43:29,248 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:29,248 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:43:29,248 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:29,248 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:43:29,248 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:29,248 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:43:29,248 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:29,248 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:43:29,248 - ModelLearningUtils - INFO - 📉 Training Loss: 0.497620
+2026-02-13 18:43:29,248 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.0912
+2026-02-13 18:43:29,248 - ModelLearningUtils - INFO - 📉 Test Loss: 0.656696
+2026-02-13 18:43:29,248 - ModelLearningUtils - INFO - 📉 Test Loss: 0.6567
+2026-02-13 18:43:29,248 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.4590
+2026-02-13 18:43:29,248 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00016
+2026-02-13 18:43:34,261 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:39940.
+2026-02-13 18:43:34,261 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:34,261 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:34,262 - CTRL_TCP - INFO - Connection with 192.168.12.10:39940 closed.
+2026-02-13 18:43:34,266 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:44770.
+2026-02-13 18:43:34,267 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:39954.
+2026-02-13 18:43:34,267 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00017-2026#02#13T18:43:34.259210'
+2026-02-13 18:43:34,267 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00017-2026#02#13T18:43:34.259210'
+2026-02-13 18:43:34,268 - CTRL_TCP - INFO - Start WAFL learning epoch: 00017
+2026-02-13 18:43:34,268 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00017
+2026-02-13 18:43:34,269 - CTRL_TCP - INFO - Connection with 192.168.12.10:39954 closed.
+2026-02-13 18:43:34,291 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:43:34,292 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:43:34,297 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:39968.
+2026-02-13 18:43:34,310 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:34,318 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:34,328 - CTRL_TCP - INFO - Connection with 192.168.12.10:39968 closed.
+2026-02-13 18:43:34,335 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 25
+2026-02-13 18:43:34,336 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:43:34,336 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:34,336 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:43:34,336 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:34,336 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:43:34,336 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:34,336 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:43:34,336 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:34,336 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:43:34,336 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:34,336 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:43:34,336 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:34,336 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:43:34,336 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:34,336 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:43:34,336 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:34,336 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:43:34,336 - ModelLearningUtils - INFO - 📉 Training Loss: 0.757214
+2026-02-13 18:43:34,336 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.1116
+2026-02-13 18:43:34,336 - ModelLearningUtils - INFO - 📉 Test Loss: 0.927029
+2026-02-13 18:43:34,336 - ModelLearningUtils - INFO - 📉 Test Loss: 0.9270
+2026-02-13 18:43:34,336 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.6213
+2026-02-13 18:43:34,336 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00017
+2026-02-13 18:43:39,348 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:55196.
+2026-02-13 18:43:39,348 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:39,348 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:39,349 - CTRL_TCP - INFO - Connection with 192.168.12.10:55196 closed.
+2026-02-13 18:43:39,354 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:44784.
+2026-02-13 18:43:39,354 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:55204.
+2026-02-13 18:43:39,355 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00018-2026#02#13T18:43:39.346514'
+2026-02-13 18:43:39,355 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00018-2026#02#13T18:43:39.346514'
+2026-02-13 18:43:39,356 - CTRL_TCP - INFO - Start WAFL learning epoch: 00018
+2026-02-13 18:43:39,362 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00018
+2026-02-13 18:43:39,388 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:43:39,393 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:43:39,398 - CTRL_TCP - INFO - Connection with 192.168.12.10:55204 closed.
+2026-02-13 18:43:39,424 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:43:39,433 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:55218.
+2026-02-13 18:43:39,434 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 26
+2026-02-13 18:43:39,433 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:39,434 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:43:39,434 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:39,434 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:39,434 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:39,434 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:43:39,434 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:39,434 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:43:39,434 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:39,434 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:43:39,434 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:39,434 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:43:39,435 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:39,435 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:43:39,435 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:39,435 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:43:39,435 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:39,435 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:43:39,435 - ModelLearningUtils - INFO - 📉 Training Loss: 0.371965
+2026-02-13 18:43:39,435 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.5589
+2026-02-13 18:43:39,435 - ModelLearningUtils - INFO - 📉 Test Loss: 0.704029
+2026-02-13 18:43:39,435 - ModelLearningUtils - INFO - 📉 Test Loss: 0.7040
+2026-02-13 18:43:39,435 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.6228
+2026-02-13 18:43:39,435 - CTRL_TCP - INFO - Connection with 192.168.12.10:55218 closed.
+2026-02-13 18:43:39,435 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00018
+2026-02-13 18:43:44,450 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:55230.
+2026-02-13 18:43:44,450 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:44,450 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:44,451 - CTRL_TCP - INFO - Connection with 192.168.12.10:55230 closed.
+2026-02-13 18:43:44,518 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:55234.
+2026-02-13 18:43:44,518 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00019-2026#02#13T18:43:44.508847'
+2026-02-13 18:43:44,519 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00019-2026#02#13T18:43:44.508847'
+2026-02-13 18:43:44,520 - CTRL_TCP - INFO - Start WAFL learning epoch: 00019
+2026-02-13 18:43:44,520 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00019
+2026-02-13 18:43:44,587 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:41176.
+2026-02-13 18:43:44,587 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:43:44,587 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:43:44,592 - CTRL_TCP - INFO - Connection with 192.168.12.10:55234 closed.
+2026-02-13 18:43:44,597 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:55246.
+2026-02-13 18:43:44,608 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:44,620 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:44,608 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:43:44,633 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:44,633 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:43:44,633 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:44,652 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:43:44,644 - CTRL_TCP - INFO - Connection with 192.168.12.10:55246 closed.
+2026-02-13 18:43:44,652 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:44,653 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 27
+2026-02-13 18:43:44,653 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:43:44,653 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:44,653 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:43:44,653 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:44,653 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:43:44,653 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:44,653 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:43:44,653 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:44,653 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:43:44,653 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:44,653 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:43:44,654 - ModelLearningUtils - INFO - 📉 Training Loss: 0.743382
+2026-02-13 18:43:44,654 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.1548
+2026-02-13 18:43:44,654 - ModelLearningUtils - INFO - 📉 Test Loss: 0.019633
+2026-02-13 18:43:44,654 - ModelLearningUtils - INFO - 📉 Test Loss: 0.0196
+2026-02-13 18:43:44,654 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.1812
+2026-02-13 18:43:44,654 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00019
+2026-02-13 18:43:49,647 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:52388.
+2026-02-13 18:43:49,647 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:49,647 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:49,648 - CTRL_TCP - INFO - Connection with 192.168.12.10:52388 closed.
+2026-02-13 18:43:49,652 - ModelSharingUtils - INFO - 📶 Connection Established with 192.168.12.102:41184.
+2026-02-13 18:43:49,658 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:52398.
+2026-02-13 18:43:49,658 - CTRL_TCP - INFO - Received raw command: 'BEGIN-WAFL-00020-2026#02#13T18:43:49.650163'
+2026-02-13 18:43:49,658 - CTRL_TCP - INFO - Processing command: 'BEGIN-WAFL-00020-2026#02#13T18:43:49.650163'
+2026-02-13 18:43:49,659 - CTRL_TCP - INFO - Start WAFL learning epoch: 00020
+2026-02-13 18:43:49,659 - ModelLearningUtils - INFO - 🎯 Beginning the WAFL-Learning Epoch: 00020
+2026-02-13 18:43:49,665 - CTRL_TCP - INFO - Connection with 192.168.12.10:52398 closed.
+2026-02-13 18:43:49,681 - ModelSharingUtils - INFO - 📡 Dispatching Model Data to the WAFL Peer.
+2026-02-13 18:43:49,681 - ModelSharingUtils - INFO - 📦 Compressing the model for transfer.
+2026-02-13 18:43:49,706 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:52406.
+2026-02-13 18:43:49,714 - CTRL_TCP - INFO - Received raw command: 'STAT'
+2026-02-13 18:43:49,714 - CTRL_TCP - INFO - Processing command: 'STAT'
+2026-02-13 18:43:49,729 - CTRL_TCP - INFO - Connection with 192.168.12.10:52406 closed.
+2026-02-13 18:43:49,742 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 28
+2026-02-13 18:43:49,742 - ModelSharingUtils - INFO - ✅ Retrieved model parameters from peer: 192.168.12.102
+2026-02-13 18:43:49,742 - CTRL_TCP - WARNING - Index for agent 2 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:49,742 - ModelLearningUtils - ERROR - Could not get IP for neighbour 2
+2026-02-13 18:43:49,742 - CTRL_TCP - WARNING - Index for agent 3 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:49,742 - ModelLearningUtils - ERROR - Could not get IP for neighbour 3
+2026-02-13 18:43:49,742 - CTRL_TCP - WARNING - Index for agent 4 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:49,742 - ModelLearningUtils - ERROR - Could not get IP for neighbour 4
+2026-02-13 18:43:49,742 - CTRL_TCP - WARNING - Index for agent 5 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:49,742 - ModelLearningUtils - ERROR - Could not get IP for neighbour 5
+2026-02-13 18:43:49,742 - CTRL_TCP - WARNING - Index for agent 6 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:49,742 - ModelLearningUtils - ERROR - Could not get IP for neighbour 6
+2026-02-13 18:43:49,742 - CTRL_TCP - WARNING - Index for agent 7 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:49,742 - ModelLearningUtils - ERROR - Could not get IP for neighbour 7
+2026-02-13 18:43:49,743 - CTRL_TCP - WARNING - Index for agent 8 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:49,743 - ModelLearningUtils - ERROR - Could not get IP for neighbour 8
+2026-02-13 18:43:49,743 - CTRL_TCP - WARNING - Index for agent 9 is out of bounds for the IP list. Data inconsistency might exist.
+2026-02-13 18:43:49,743 - ModelLearningUtils - ERROR - Could not get IP for neighbour 9
+2026-02-13 18:43:49,743 - ModelLearningUtils - INFO - 📉 Training Loss: 0.536072
+2026-02-13 18:43:49,743 - ModelLearningUtils - INFO - 📈 Training Accuracy: 0.5731
+2026-02-13 18:43:49,743 - ModelLearningUtils - INFO - 📉 Test Loss: 0.402511
+2026-02-13 18:43:49,743 - ModelLearningUtils - INFO - 📉 Test Loss: 0.4025
+2026-02-13 18:43:49,743 - ModelLearningUtils - INFO - 📈 Test Accuracy: 0.3580
+2026-02-13 18:43:49,743 - ModelLearningUtils - INFO - ✅ Completed the WAFL-Learning Epoch: 00020
+2026-02-13 18:44:00,011 - CTRL_TCP - INFO - 📶 Connection Established with 192.168.12.10:35840.
+2026-02-13 18:44:00,012 - CTRL_TCP - INFO - Received raw command: 'KILL'
+2026-02-13 18:44:00,012 - CTRL_TCP - INFO - Processing command: 'KILL'
+2026-02-13 18:44:00,013 - CTRL_TCP - INFO - KILL command received. Shutting down listeners and ongoing tasks.
+2026-02-13 18:44:00,013 - CTRL_TCP - INFO - Waiting for thread P2P_Listener to terminate...
+2026-02-13 18:44:00,095 - NetworkTrafficUtils - INFO - 📝 Traffic Data saved to CSV for epoch 29
+2026-02-13 18:44:09,708 - ModelSharingUtils - INFO - P2P listener thread has been terminated.
+2026-02-13 18:44:09,708 - CTRL_TCP - INFO - Thread P2P_Listener has terminated successfully.
+2026-02-13 18:44:09,708 - CTRL_TCP - INFO - Waiting for thread Thread-31 (network_traffic_thread) to terminate...
+2026-02-13 18:44:09,708 - CTRL_TCP - INFO - Thread Thread-31 (network_traffic_thread) has terminated successfully.
+2026-02-13 18:44:09,708 - CTRL_TCP - INFO - All stoppable threads have been processed.
+2026-02-13 18:44:09,708 - CTRL_TCP - INFO - Connection with 192.168.12.10:35840 closed.
+2026-02-13 18:44:09,708 - CTRL_TCP - INFO - Control listener thread has been terminated.

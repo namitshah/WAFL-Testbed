@@ -8,13 +8,17 @@ Also, please refer to the UTokyo [WAFL repository](https://github.com/jo2lxq/waf
     - execution_config, parameters.json, deploy.sh, main.py, collect.py, analyze.py
   - wafl/
     - config/ (common/ and ID/)
-      - config.json [*], contact_pattern files.
+      - config.json [*]
     - dataset/ (common/ and ID/)
       - dataset files
     - src/ (common/ and ID/)
       - main.py
   - utils/
+    - contact_pattern/
+      - contact pattern files (json)
     - supplementary resources
+  - results/
+    - experiment results [*]
   - uv.lock, pyproject.toml, miscellaneous resources
 #### [*] Auto-Generated during deployment.
 ## Common Experiment Flow
@@ -22,7 +26,7 @@ Also, please refer to the UTokyo [WAFL repository](https://github.com/jo2lxq/waf
 2. Specify the principal configuration (execution_config, parameters.json).
 3. Remotely log into the target Control Server (ssh).
 4. Upload the project's source code onto the system.
-5. Generate and activate the virtual environment with uv (from pyproject.toml and uv.lock).
+5. Generate and activate the virtual environment with uv sync (from pyproject.toml and uv.lock).
 6. Deploy the project to the Execution Servers (ctrl/deploy.sh).
 7. Start the Experiment Run (python ctrl/main.py).
 8. Collect the results after completion (python ctrl/collect.py).

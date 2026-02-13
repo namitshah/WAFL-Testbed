@@ -1,0 +1,13 @@
+{
+  "epochs": {
+    "self": 10,
+    "wafl": 50
+  },
+  "contact_pattern": "contact_pattern.json",
+  "wafl_phase": {
+    "aggregation_strategy": "FedAvg",
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "coefficiency": 1.0
+  }
+}
