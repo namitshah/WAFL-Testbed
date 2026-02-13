@@ -1,6 +1,7 @@
 # WAFL-Testbed
 A repository for testbed implementations of WAFL projects. <br/>
 An extension of the [WAFL-Testbed](https://github.com/jo2lxq/wafl/tree/testbed-develop/WAFL-Testbed) project (WAFL-MLP implementation).<br/>
+Also, please refer to the UTokyo [WAFL repository](https://github.com/jo2lxq/wafl).
 ### Modify the **Vanilla** Project's code (generalized minimal implementation) <br/> for deploying and testing any WAFL variant.
 ## Common Project Structure:
   - ctrl/
@@ -26,3 +27,7 @@ An extension of the [WAFL-Testbed](https://github.com/jo2lxq/wafl/tree/testbed-d
 7. Start the Experiment Run (python ctrl/main.py).
 8. Collect the results after completion (python ctrl/collect.py).
 9. Analyze and visualize the results (python ctrl/analyze.py).
+## WAFL Testbed | IEEE Xplore
+Namit Shah, Kosei Takahashi, Tatsumi Yamazaki, Natsuki Zenko, Hiroshi Esaki, Hideya Ochiai, <br/>
+**An Emulation Platform for Wireless Ad Hoc Federated Learning: Design, Implementation, and Case Study**, <br/>
+2026 IEEE International Conference on Knowledge: Science and Technology [(IEEE Xplore)]().
