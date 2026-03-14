@@ -1058,7 +1058,7 @@ class ControlServer:
 
             for agent in force_kill_needed:
                 try:
-                    agent.force_kill_process(self.config)
+                    agent.force_kill_process(self.config, ssh_password)
                     self.logger.info(f"✅ Force kill successful for agent {agent.name}")
                 except Exception as e:
                     self.logger.error(f"💥 Force kill failed for agent {agent.name}: {e}")
