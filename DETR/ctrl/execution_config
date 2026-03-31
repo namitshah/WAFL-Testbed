@@ -10,5 +10,6 @@ export USER='denjo'
 export DEPLOYMENT_LOCATION='/home/denjo/workspace/XXXX'
 export EXPERIMENT_NAME='WAFL-VANILLA'
 
+
 #Miscellaneous settings
 export SKIP_DATASET_DEPLOYMENT=false
