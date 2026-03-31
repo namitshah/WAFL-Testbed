@@ -1,5 +1,11 @@
 name: Ruff
-on: [ push, pull_request ]
+on:
+  push:
+    paths-ignore:
+      - 'DETR/wafl/src/common/**'
+  pull_request:
+    paths-ignore:
+      - 'DETR/wafl/src/common/**'
 jobs:
   ruff:
     runs-on: ubuntu-latest
