@@ -319,21 +319,19 @@ class WaflAgent:
             command_tcpdump_kill = "sudo -S -p '' pkill -f \"tcpdump\""
             tcpdump_pcap_file = os.path.join("/tmp", "tcpdump_")
             p2p_port = self.config["WAFL_DEVICE_P2P_PORT"]
-            # Linux Interface: enp0s31f6 | Buffer Size: 4 MB | File Size: 5 MB
+            # Linux Interface: enp0s31f6 | Buffer Size: 50 MB | File Size: 200 MB
             # Number of Files: 10 | Port: 10002 (Default P2P) | SUDO required.
             command_tcpdump = (
-                f"sudo -S -p '' bash -lc \"nohup tcpdump -i enp0s31f6 tcp port {p2p_port} "
-                f"-s 0 -C 5 -W 10 -B 4096 -U -w {tcpdump_pcap_file} "
+                f"sudo -S -p '' bash -lc \"nohup tcpdump -i any tcp port {p2p_port} "
+                f"-s 0 -C 200 -W 10 -B 512000 -U -w {tcpdump_pcap_file} "
                 f'> /dev/null 2>&1 &"'
             )
             venv_path = os.path.join(target_path, ".venv", "bin", "activate")
             python_script = os.path.join(target_path, "src/main.py")
             output_file = os.path.join(target_path, "results", experiment_id, "output.log")
             command_start = (
-                f"cd {target_path} && "
-                f"source {venv_path} && "
-                f"nohup python3 -u {python_script} "
-                f"> {output_file} 2>&1 < /dev/null & echo $!"
+                f"cd {target_path} && source {venv_path} && "
+                f"(nohup python3 -u {python_script} > {output_file} 2>&1 < /dev/null & echo $!)"
             )
 
             self.logger.debug(f"🔗 Connecting to {username}@{self.ip}:{ssh_port}")
@@ -548,7 +546,7 @@ class WaflAgent:
                     )
 
             # Validate status code
-            valid_statuses = ["EXEC", "DONE", "ERROR", "READY"]
+            valid_statuses = ["EXEC", "DONE", "ERROR", "READY", "CRITICAL"]
             if status_code not in valid_statuses and not status_code.startswith(tuple(valid_statuses)):
                 self.logger.warning(f"📊 Unrecognized status format from agent {self.name}: {first_line}")
                 self.status = "ERROR"
@@ -905,8 +903,8 @@ class ControlServer:
                 raise RuntimeError(f"❌ Failed to start agents: {', '.join(failed_agents)}")
 
             # Allow some time for processes to stabilize
-            self.logger.info("⏳ Waiting 20 seconds for agents to stabilize...")
-            time.sleep(20)
+            self.logger.info("⏳ Waiting 30 seconds for agents to stabilize...")
+            time.sleep(30)
 
             self.logger.info("✅ All agents started successfully")
 
@@ -920,8 +918,14 @@ class ControlServer:
                 failed_commands = []
                 for agent in self.agents:
                     if not agent.begin_epoch(phase="SELF", epoch=epoch):
-                        failed_commands.append(agent.name)
-
+                        failed_commands.append(agent)
+                while len(failed_commands) > 0:
+                    failed_commands_update = []
+                    for agent in failed_commands:
+                        if not agent.begin_epoch(phase="SELF", epoch=epoch):
+                            failed_commands_update.append(agent)
+                    failed_commands = failed_commands_update
+                    time.sleep(10)
                 if failed_commands:
                     raise RuntimeError(f"❌ Failed to start SELF epoch {epoch} on agents: {', '.join(failed_commands)}")
 
@@ -941,8 +945,14 @@ class ControlServer:
                 failed_commands = []
                 for agent in self.agents:
                     if not agent.begin_epoch(phase="WAFL", epoch=epoch):
-                        failed_commands.append(agent.name)
-
+                        failed_commands.append(agent)
+                while len(failed_commands) > 0:
+                    failed_commands_update = []
+                    for agent in failed_commands:
+                        if not agent.begin_epoch(phase="SELF", epoch=epoch):
+                            failed_commands_update.append(agent)
+                    failed_commands = failed_commands_update
+                    time.sleep(10)
                 if failed_commands:
                     raise RuntimeError(f"❌ Failed to start WAFL epoch {epoch} on agents: {', '.join(failed_commands)}")
 
@@ -996,6 +1006,9 @@ class ControlServer:
                     if "ERROR" in status_code:
                         error_agents.append(f"{agent.name}({status_code})")
                         continue
+                    if "CRITICAL" in status_code:
+                        self.logger.error(f"❌ Agent reported Critical Error: {agent.name}")
+                        raise Exception("CRITICAL")
 
                     # Check completion status
                     if status_code.startswith("DONE"):
@@ -1010,12 +1023,15 @@ class ControlServer:
                             self.logger.warning(f"⚠️ Could not parse epoch from status '{status_code}' for agent {agent.name}")
 
                 except Exception as e:
+                    if len(e.args) > 0 and e.args[0] == "CRITICAL":
+                        raise RuntimeError("❌ Critical Error Reported.")
                     self.logger.error(f"💥 Error getting status from agent {agent.name}: {e}")
                     error_agents.append(f"{agent.name}(COMM_ERROR)")
 
             # Report errors immediately
             if error_agents:
-                raise RuntimeError(f"❌ Agents reported errors: {', '.join(error_agents)}")
+                self.logger.error(f"❌ Agents reported errors: {', '.join(error_agents)}")
+                # raise RuntimeError(f"❌ Agents reported errors: {', '.join(error_agents)}")
 
             # Progress logging (every 60 seconds)
             if elapsed_time - last_progress_log >= 60:

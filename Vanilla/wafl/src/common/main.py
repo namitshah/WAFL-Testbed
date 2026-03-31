@@ -531,6 +531,8 @@ class CTRL_TCP:
     A class for handling the TCP connection between ctrl server.
     """
 
+    CRITICAL_FLAG = False
+
     def __init__(self, config_path: str):
         """
         Initialize the TCP connection parameters.
@@ -701,6 +703,7 @@ class CTRL_TCP:
             self,
             self.experiment_id,
             self.wafl_phase_params,
+            self.agent_index,
         )
 
     def _receive_command(self, conn: socket.socket) -> Optional[str]:
@@ -851,6 +854,9 @@ class CTRL_TCP:
                     conn.sendall("ERROR\r\n".encode("utf-8"))
                     return False
                 if self.learning_thread and self.learning_thread.is_alive():
+                    if self.current_epoch_number == parts[2] and self.current_epoch_type == parts[1]:
+                        conn.sendall("OK\r\n".encode("utf-8"))
+                        return True
                     self.logger.warning("Cannot start new learning task. A task is already running.")
                     conn.sendall("ERROR\r\n".encode("utf-8"))
                     return False
@@ -939,8 +945,9 @@ class CTRL_TCP:
             return "DONE-NONE--1-0\r\n"
 
         log_line_count = len(self.status_logs)
-
-        if self.is_epoch_running or (self.learning_thread and self.learning_thread.is_alive()):
+        if CTRL_TCP.CRITICAL_FLAG:
+            header = "CRITICAL"
+        elif self.is_epoch_running or (self.learning_thread and self.learning_thread.is_alive()):
             # Format: EXEC-XXXX-YYYYY-Z
             header = f"EXEC-{self.current_epoch_type}-{self.current_epoch_number}-{log_line_count}"
         else:
