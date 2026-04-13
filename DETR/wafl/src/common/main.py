@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import argparse
 import copy
 import csv
 import datetime
@@ -9,24 +8,28 @@ import logging
 import os
 import pickle
 import random
-import socket
+import socket, struct
 import threading
 import time
-import traceback
 import zlib
+import argparse
+import time
+import traceback
 from pathlib import Path
-from typing import Any, List, Optional, Tuple
-
-import datasets
+import os
+import gc
 import numpy as np
 import torch
+from torch.utils.data import DataLoader, DistributedSampler, Subset
+from typing import Any, List, Optional, Tuple
+from scapy.all import IP, rdpcap
+import datasets
 import util.misc as utils
 from datasets import build_dataset, get_coco_api_from_dataset
 from functions.engine_wafl import evaluate, train_one_epoch
+from functions.aggregation import model_aggregate
 from models import build_wafl_models
-from scapy.all import IP, rdpcap
-from torch.utils.data import DataLoader, Subset
-from util import generate_iid, generate_noniid
+from util import generate_noniid, generate_iid
 
 
 class NetworkTrafficUtils:
@@ -107,7 +110,6 @@ class NetworkTrafficUtils:
         NetworkTrafficUtils.last_epoch_string = ""
         NetworkTrafficUtils.logger = logging.getLogger("NetworkTrafficUtils")
 
-
 # Modify this class' methods for WAFL variant implementation.
 class ModelLearningUtils:
     """
@@ -134,67 +136,19 @@ class ModelLearningUtils:
         Initialize the learning process instance.
         Linkages to the train, test, validate dataset sections,
         Initialization of modules (torch, for eg),
-        Initialization of the CUDA device, ML model, optimizer,
+        Initialization of the CUDA device, ML model, optimizer, 
         Hyperparameter specification, loss method, among other stuff.
         """
         ###
         # Please specify the above here. #
-        self.args = argparse.Namespace(
-            lr=1e-05,
-            lr_backbone=1e-06,
-            batch_size=2,
-            weight_decay=0.0001,
-            epochs=200,
-            lr_drop=1000,
-            clip_max_norm=0.1,
-            frozen_weights=None,
-            tle=None,
-            he=None,
-            backbone="resnet50",
-            dilation=False,
-            position_embedding="sine",
-            enc_layers=6,
-            dec_layers=6,
-            dim_feedforward=2048,
-            hidden_dim=256,
-            dropout=0.1,
-            nheads=8,
-            num_queries=100,
-            pre_norm=False,
-            masks=False,
-            aux_loss=True,
-            set_cost_class=1,
-            set_cost_bbox=5,
-            set_cost_giou=2,
-            mask_loss_coef=1,
-            dice_loss_coef=1,
-            bbox_loss_coef=5,
-            giou_loss_coef=2,
-            eos_coef=0.1,
-            num_classes=10,
-            dataset_file="custom",
-            coco_path="dataset/custom/",
-            coco_panoptic_path=None,
-            remove_difficult=False,
-            output_dir=f"./results/{experiment_id}",
-            device="cuda",
-            seed=42,
-            resume="src/detr-r50_no-class-head.pth",
-            start_epoch=0,
-            eval=False,
-            num_workers=2,
-            num_clients=10,
-            noniid_ratio=90,
-            iid_setting=False,
-            no_exchange=False,
-            preself_epochs=100,
-            topology="line",
-            resume_from_preselftrained="",
-            resume_from_wafl="",
-            detail_log=False,
-            distributed=None,
-        )
-
+        self.args = argparse.Namespace(lr=1e-05, lr_backbone=1e-06, batch_size=2, weight_decay=0.0001, epochs=0, lr_drop=100, clip_max_norm=0.1, \
+            frozen_weights=None, tle=True, he=None, backbone='resnet50', dilation=False, position_embedding='sine', enc_layers=6, dec_layers=6, \
+            dim_feedforward=2048, hidden_dim=256, dropout=0.2, nheads=8, num_queries=100, pre_norm=False, masks=False, aux_loss=True, set_cost_class=1, \
+            set_cost_bbox=5, set_cost_giou=2, mask_loss_coef=1, dice_loss_coef=1, bbox_loss_coef=5, giou_loss_coef=2, eos_coef=0.1, num_classes=10, \
+            dataset_file='custom', coco_path='dataset/custom/', coco_panoptic_path=None, remove_difficult=False, output_dir=f"./results/{experiment_id}", device='cuda', \
+            seed=42, resume='src/detr-r50_no-class-head.pth', start_epoch=0, eval=False, num_workers=2, num_clients=10, noniid_ratio=90, iid_setting=False, \
+            no_exchange=False, preself_epochs=100, topology='line', resume_from_preselftrained='', resume_from_wafl='', detail_log=False, distributed=None)
+        
         self.device = torch.device("cuda")
         # fix the seed for reproducibility
         seed = self.args.seed + utils.get_rank()
@@ -208,68 +162,47 @@ class ModelLearningUtils:
         if self.args.tle:
             print("TLE mode")
             for name, p in self.model.named_parameters():
-                if "backbone" in name:
-                    p.requires_grad = False
-
+                if 'backbone' in name:
+                    p.requires_grad=False
+    
         if self.args.he:
             print("HE mode")
             for name, p in self.model.named_parameters():
-                if ("class_embed" in name) or ("bbox_embed" in name) or ("query_embed" in name):
+                if ('class_embed' in name) or ('bbox_embed' in name) or ('query_embed' in name):
                     p.requires_grad = True
                 else:
                     p.requires_grad = False
         # By default it is FPE mode.
         self.n_parameters = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
-        print("number of params:", self.n_parameters)
-        self.param_dicts = [
+        print('number of params:', self.n_parameters)
+        self.param_dicts =  [
             {"params": [p for n, p in self.model.named_parameters() if "backbone" not in n and p.requires_grad]},
             {
                 "params": [p for n, p in self.model.named_parameters() if "backbone" in n and p.requires_grad],
                 "lr": self.args.lr_backbone,
             },
         ]
-        self.optimizer = torch.optim.AdamW(self.param_dicts, lr=self.args.lr, weight_decay=self.args.weight_decay)
-        self.lr_scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, self.args.lr_drop)
-        self.dataset_train = build_dataset(image_set="train", args=self.args)
-        self.dataset_val = build_dataset(image_set="val", args=self.args)
+        self.optimizer = torch.optim.AdamW(self.param_dicts, lr=self.args.lr,
+                                weight_decay=self.args.weight_decay)
+        self.lr_scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, self.args.lr_drop, gamma=0.5)
+        self.dataset_train = build_dataset(image_set='train', args=self.args)
+        self.dataset_val = build_dataset(image_set='val', args=self.args)
         if self.args.iid_setting:
-            filter_path = f"config/filter_s{self.args.seed}.pt"
+            filter_path = f'config/filter_s{self.args.seed}.pt'
             if not os.path.isfile(filter_path):
-                generate_iid.generate(
-                    self.dataset_train,
-                    self.args.batch_size,
-                    self.args.num_clients,
-                    self.args.num_classes,
-                    filter_path,
-                    self.args.seed,
-                )
+                generate_iid.generate(self.dataset_train, self.args.batch_size, self.args.num_clients, self.args.num_classes, filter_path, self.args.seed)
         else:
-            filter_path = f"config/filter_r{self.args.noniid_ratio}_s{self.args.seed}.pt"
+            filter_path = f'config/filter_r{self.args.noniid_ratio}_s{self.args.seed}.pt'
             if not os.path.isfile(filter_path):
-                generate_noniid.generate(
-                    self.dataset_train,
-                    self.args.batch_size,
-                    self.args.num_clients,
-                    self.args.num_classes,
-                    filter_path,
-                    self.args.noniid_ratio,
-                    self.args.seed,
-                )
+                generate_noniid.generate(self.dataset_train, self.args.batch_size, self.args.num_clients, self.args.num_classes, filter_path, \
+                self.args.noniid_ratio, self.args.seed)
 
         self.index = torch.load(filter_path)[DID]
         self.subset = Subset(self.dataset_train, self.index)
         self.sampler_val = torch.utils.data.SequentialSampler(self.dataset_val)
-        self.data_loader_train = DataLoader(
-            self.subset, batch_size=self.args.batch_size, collate_fn=utils.collate_fn, num_workers=self.args.num_workers
-        )
-        self.data_loader_val = DataLoader(
-            self.dataset_val,
-            self.args.batch_size,
-            sampler=self.sampler_val,
-            drop_last=False,
-            collate_fn=utils.collate_fn,
-            num_workers=self.args.num_workers,
-        )
+        self.data_loader_train = DataLoader(self.subset, batch_size=self.args.batch_size, collate_fn=utils.collate_fn, num_workers=self.args.num_workers)
+        self.data_loader_val = DataLoader(self.dataset_val, self.args.batch_size, sampler=self.sampler_val,
+            drop_last=False, collate_fn=utils.collate_fn, num_workers=self.args.num_workers)
         if self.args.dataset_file == "coco_panoptic":
             # We also evaluate AP during panoptic training, on original coco DS
             coco_val = datasets.coco.build("val", self.args)
@@ -277,18 +210,21 @@ class ModelLearningUtils:
         else:
             self.base_ds = get_coco_api_from_dataset(self.dataset_val)
         if self.args.output_dir:
-            os.makedirs(f"{self.args.output_dir}", exist_ok=True)
+            os.makedirs(f'{self.args.output_dir}', exist_ok=True)
         output_dir = Path(self.args.output_dir)
         if self.args.resume:
-            if self.args.resume.startswith("https"):
-                checkpoint = torch.hub.load_state_dict_from_url(self.args.resume, map_location="cpu", check_hash=True)
+            if self.args.resume.startswith('https'):
+                checkpoint = torch.hub.load_state_dict_from_url(
+                    self.args.resume, map_location='cpu', check_hash=True)
             else:
-                checkpoint = torch.load(self.args.resume, map_location="cpu")
-            self.model.load_state_dict(checkpoint["model"], strict=False)
+                checkpoint = torch.load(self.args.resume, map_location='cpu')
+            self.model.load_state_dict(checkpoint['model'], strict=False)
+            #self.model.load_state_dict(torch.load(self.args.resume))
         print("Completed Initialization.")
         # Please specify the above here. #
         ###
         self.model_sharing = model_sharing
+        self.model_sharing.update_model_instance(self.model, "DETR", epoch=0)
         self.ctrl_tcp = ctrl_tcp
         self.wafl_phase_params = wafl_phase_params
         self.logger = logging.getLogger("ModelLearningUtils")
@@ -316,6 +252,8 @@ class ModelLearningUtils:
         self.train_loss = 0
         self.train_mAP = 0
         self.epoch_number = 0
+        self.test_loss = 0
+        self.test_mAP = 0
 
     def get_neighbour_list(self, five_digit_number_str: str = "99999") -> List[int]:
         """
@@ -347,7 +285,7 @@ class ModelLearningUtils:
         except Exception as exc:
             self.logger.error(f"Error saving network traffic: {str(exc)[:100]}...")
 
-    def self_learn(self, five_digit_number_str: str = "99999", WAFL_LEARN=False) -> bool:
+    def self_learn(self, five_digit_number_str: str = "99999", WAFL_LEARN=False, nesting=0) -> bool:
         """
         Implementation of the Self-Learning Epoch Logic for WAFL-DETR.
         """
@@ -356,43 +294,42 @@ class ModelLearningUtils:
         SUCCESS = False
         try:
             # Code for the Self-TRAIN epoch stage #
-            train_stats = train_one_epoch(
-                self.model,
-                self.criterion,
-                self.data_loader_train,
-                self.optimizer,
-                self.device,
-                int(five_digit_number_str),
-                self.args.clip_max_norm,
-                self.args.detail_log,
-            )
-            test_stats, coco_evaluator = evaluate(
-                self.model,
-                self.criterion,
-                self.postprocessors,
-                self.data_loader_val,
-                self.base_ds,
-                self.device,
-                self.args.output_dir,
-                self.args.detail_log,
-            )
+            self.old_model = copy.deepcopy(self.model)
+            try:
+                train_stats = train_one_epoch(
+                    self.model, self.criterion, self.data_loader_train, self.optimizer, self.device, int(five_digit_number_str),
+                    self.args.clip_max_norm, self.args.detail_log)
+                test_stats, coco_evaluator = evaluate(
+                    self.model, self.criterion, self.postprocessors, self.data_loader_val, self.base_ds, self.device, self.args.output_dir, self.args.detail_log
+                )
+            except Exception as e:
+                self.logger.error(f"The following error occurred in self_learn: {str(exc)[:100]}...")
+                self.logger.error(f"{traceback.format_exc()}")
+                if nesting >= 10:
+                    raise Exception("CRITICAL")
+                else:
+                    self.model = self.old_model
+                    time.sleep(10)
+                    SUCCESS = self.self_learn(five_digit_number_str, WAFL_LEARN, nesting + 1)
+                    return SUCCESS
+
             print(f"Training: {train_stats}")
             print(f"Testing: {test_stats}")
-            self.train_loss = train_stats["loss"]
-            test_mAP = test_stats["coco_eval_bbox"][0]
-            test_loss = test_stats["loss"]
+            self.train_loss = train_stats['loss']
+            self.test_mAP = test_stats['coco_eval_bbox'][1]
+            self.test_loss = test_stats['loss']
 
             if not WAFL_LEARN:
                 self.logger.info(f"🏁 Completed the Self-Learning Epoch: {five_digit_number_str}")
-            self._save_results_to_csv(self.epoch_number, self.train_mAP, self.train_loss, test_mAP, test_loss)
+                torch.save(self.model.state_dict(), "results/latest_self_model.pth")
+            self._save_results_to_csv(self.epoch_number, self.train_mAP, self.train_loss, self.test_mAP, self.test_loss)
             # Code for the Self-TRAIN epoch stage #
             self.epoch_number += 1
-            self.model_sharing.update_model_instance(self.model, "DETR")
             SUCCESS = True
         except Exception as exc:
             self.logger.error(f"The following error occurred in self_learn: {str(exc)[:100]}...")
-            self.logger.error(f"{traceback.format_exc()}")
-            CTRL_TCP.CRITICAL_FLAG = True
+            self.logger.error(f"{traceback.format_exc()}") 
+            CTRL_TCP.set_CRITICAL_FLAG(True)
             SUCCESS = False
         return SUCCESS
 
@@ -411,7 +348,7 @@ class ModelLearningUtils:
                 if peer_ip is None:
                     self.logger.error(f"Could not get IP for neighbour {neighbour}")
                     continue
-                received_model = self.model_sharing.request_model_from_peer(peer_ip, "&task=DETR")
+                received_model = self.model_sharing.request_model_from_peer(peer_ip, f"{str(int(five_digit_number_str) - 1)}")
                 for key in received_model:
                     model_difference = received_model[key] - self.model.state_dict()[key]
                     local_model[key] += model_difference * self.wafl_phase_params["coefficiency"] / (n_nbr + 1)
@@ -421,41 +358,33 @@ class ModelLearningUtils:
                 SELF_LEARN_FLAG = self.self_learn(five_digit_number_str, WAFL_LEARN=True)
             else:
                 self.logger.info("No model exchange with other agents in this WAFL epoch.")
-                test_stats, coco_evaluator = evaluate(
-                    self.model,
-                    self.criterion,
-                    self.postprocessors,
-                    self.data_loader_val,
-                    self.base_ds,
-                    self.device,
-                    self.args.output_dir,
-                    self.args.detail_log,
-                )
-                print(f"Testing: {test_stats}")
-                test_mAP = test_stats["coco_eval_bbox"][0]
-                test_loss = test_stats["loss"]
-                self._save_results_to_csv(self.epoch_number, self.train_mAP, self.train_loss, test_mAP, test_loss)
+                self._save_results_to_csv(self.epoch_number, self.train_mAP, self.train_loss, self.test_mAP, self.test_loss)
                 self.epoch_number += 1
-                self.model_sharing.update_model_instance(self.model, "DETR")
+
             if not SELF_LEARN_FLAG:
                 raise Exception("SELF-LEARNING ERROR")
             self.lr_scheduler.step()
+            torch.save(self.model.state_dict(), "results/latest_wafl_model.pth")
             self.logger.info(f"✅ Completed the WAFL-Learning Epoch: {five_digit_number_str}")
             SUCCESS = True
         except Exception as exc:
             self.logger.error(f"The following error occurred in wafl_learn: {str(exc)[:100]}...")
-            CTRL_TCP.CRITICAL_FLAG = True
+            CTRL_TCP.set_CRITICAL_FLAG(True)
             SUCCESS = False
         return SUCCESS
 
-    def _save_results_to_csv(self, epoch_str: int, train_mAP: float, train_loss: float, test_mAP: float, test_loss: float):
+    def _save_results_to_csv(
+        self, epoch_str: int, train_mAP: float, train_loss: float, test_mAP: float, test_loss: float
+    ):
         """
         Save training results to CSV file.
         """
         try:
             with open(self.csv_file_path, "a", newline="", encoding="utf-8") as f:
                 writer = csv.writer(f)
-                writer.writerow([epoch_str, f"{train_mAP:.4f}", f"{train_loss:.6f}", f"{test_mAP:.4f}", f"{test_loss:.6f}"])
+                writer.writerow(
+                    [epoch_str, f"{train_mAP:.4f}", f"{train_loss:.6f}", f"{test_mAP:.4f}", f"{test_loss:.6f}"]
+                )
             self.logger.info(f"📝 Results saved to CSV for epoch {epoch_str}")
         except Exception as e:
             self.logger.error(f"💥 Failed to save results to CSV: {e}")
@@ -472,6 +401,7 @@ class ModelSharingUtils:
         """
         Initialize the instance attributes.
         """
+        self.vMODEL_EPOCH = 0
         self.vMODEL_INSTANCE = None
         self.vMODEL_INSTANCE_CACHE = None
         self.vMODEL_METADATA = ""
@@ -519,7 +449,7 @@ class ModelSharingUtils:
         """
         self.logger.info("📦 Compressing the model for transfer.")
         try:
-            compressed_output = zlib.compress(LE_model)
+            compressed_output = LE_model #zlib.compress(LE_model)
             original_size_megabytes = len(LE_model) / 1e6
             compressed_size_megabytes = len(compressed_output) / 1e6
             self.logger.info(f"🗜️ Compressed from {original_size_megabytes:.2f}MB to {compressed_size_megabytes:.2f}MB.")
@@ -536,7 +466,7 @@ class ModelSharingUtils:
         compressed_size_megabytes = len(SR_Model) / 1e6
         self.logger.info(f"📦 Received Model Size: {compressed_size_megabytes:.2f}MB.")
         try:
-            decompressed_output = zlib.decompress(SR_Model)
+            decompressed_output = SR_Model #zlib.decompress(SR_Model)
             return decompressed_output
         except Exception as exc:
             self.logger.error(f"The following error occurred: {str(exc)[:100]}...")
@@ -552,13 +482,13 @@ class ModelSharingUtils:
         try:
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 self.logger.info(f"📥 Requesting WAFL model from peer: {str(peer_IP)}")
-                command = f"{ModelSharingUtils.cMDLREQ}:src={self.addr}{other_options}\r\n"
+                command = f"{ModelSharingUtils.cMDLREQ}:{other_options}\r\n"
                 s.settimeout(self.timeout)
                 s.connect((peer_IP, self.port))
                 s.sendall(command.encode("utf-8"))
                 data = []
                 while True:
-                    packet = s.recv(4096)
+                    packet = s.recv(65536)
                     if not packet:
                         break
                     data.append(packet)
@@ -600,6 +530,7 @@ class ModelSharingUtils:
             return True
         except Exception as exc:
             self.logger.error(f"The following error occurred in _dispatch_model: {str(exc)[:100]}...")
+            conn.setsockopt(socket.SOL_SOCKET, socket.SO_LINGER, struct.pack('ii', 1, 0))
             return False
 
     def _socket_listener_thread(self) -> None:
@@ -612,43 +543,46 @@ class ModelSharingUtils:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             s.bind((self.addr, self.port))
             s.settimeout(self.timeout)
-            s.listen()
+            s.listen(1)
             self.logger.info(f"🔗 Socket bound at {self.addr}:{self.port} and listening.")
             while self.fLISTENER_ACTIVE:
                 try:
                     conn, addr_info = s.accept()
-                    conn.settimeout(self.timeout)
-                    self.logger.info(f"📶 Connection Established with {addr_info[0]}:{addr_info[1]}.")
-                    data = []
-                    while True:
-                        packet = conn.recv(4096)
-                        if not packet:
-                            break
-                        data.append(packet)
-                        if packet[-2:] == b"\r\n":
-                            break
-                    data = b"".join(data).decode("utf-8").strip()
-                    self.logger.info(f"'{data}' command received from peer.")
-                    command, options = data.split(":")
-                    if command != ModelSharingUtils.cMDLREQ:
-                        raise Exception("COMMAND MISMATCH")
-                    self.logger.info("📡 Dispatching Model Data to the WAFL Peer.")
-                    DISPATCHED = self._dispatch_model(conn, options)
-                    if not DISPATCHED:
-                        raise Exception("NOT DISPATCHED")
-                    conn.close()
+                    try:
+                        conn.settimeout(self.timeout)
+                        self.logger.info(f"📶 Connection Established with {addr_info[0]}:{addr_info[1]}.")
+                        data = []
+                        while True:
+                            packet = conn.recv(4096)
+                            if not packet:
+                                break
+                            data.append(packet)
+                            if packet[-2:] == b"\r\n":
+                                break
+                        data = b"".join(data).decode("utf-8").strip()
+                        self.logger.info(f"'{data}' command received from peer.")
+                        command, options = data.split(":")
+                        if command != ModelSharingUtils.cMDLREQ or int(options) != self.vMODEL_EPOCH:
+                            raise Exception("COMMAND MISMATCH")
+                        self.logger.info("📡 Dispatching Model Data to the WAFL Peer.")
+                        DISPATCHED = self._dispatch_model(conn, options)
+                        if not DISPATCHED:
+                            raise Exception("NOT DISPATCHED")
+                    finally:
+                        conn.shutdown(socket.SHUT_RDWR)
+                        conn.close()
+
                 except socket.timeout:
                     # This is expected to happen when no connection is made within the timeout.
                     # It allows the while loop to check the fLISTENER_ACTIVE flag.
                     continue
                 except Exception as exc:
-                    # Avoid logging minor errors that could spam the log.
                     if self.fLISTENER_ACTIVE:
                         self.logger.error(f"The following error occurred in _socket_listener_thread: {str(exc)[:100]}...")
                     time.sleep(1.0)
             self.logger.info("P2P listener thread has been terminated.")
 
-    def update_model_instance(self, LE_model: Any, metadata: str = "") -> None:
+    def update_model_instance(self, LE_model: Any, metadata: str = "", epoch: int = 0) -> None:
         """
         Updates the WAFL model instance that is
         to be dispatched.
@@ -656,13 +590,16 @@ class ModelSharingUtils:
         live_model = None
         if LE_model is None:
             # For isolated testing of the WAFL Protocol.
-            LE_model = b"MODEL-INSTANCE-DOES-NOT-EXIST" * random.randint(100, 1000)
+            LE_model = b"MODEL-INSTANCE-DOES-NOT-EXIST" * random.randint(100,1000)
             live_model = LE_model
         else:
-            live_model = {k: v for k, v in LE_model.named_parameters() if v.requires_grad}
+            live_model = {
+                k: v for k, v in LE_model.named_parameters() if v.requires_grad
+            }
         self.vMODEL_INSTANCE = copy.deepcopy(live_model)
         self.vMODEL_INSTANCE_CACHE = None
         self.vMODEL_METADATA = metadata
+        self.vMODEL_EPOCH = epoch
 
     def request_model_from_peer(self, peer_IP: str, other_options: str = "") -> Any:
         """
@@ -673,7 +610,7 @@ class ModelSharingUtils:
         Uses Exponential Backoff Mechanism for waiting between retries.
         """
         FETCHED = False
-        WAIT_TIME = 10.0
+        WAIT_TIME = 5.0
         GROWTH_FACTOR = 1.0
         while not FETCHED and self.fLISTENER_ACTIVE:
             FETCHED, model_data = self._fetch_model(peer_IP, other_options)
@@ -690,9 +627,7 @@ class CTRL_TCP:
     """
     A class for handling the TCP connection between ctrl server.
     """
-
-    CRITICAL_FLAG = False
-
+    BEGIN_PROC_FLAG = False
     def __init__(self, config_path: str):
         """
         Initialize the TCP connection parameters.
@@ -736,9 +671,30 @@ class CTRL_TCP:
         self.setup_local_wafl_node(self.agent_index, self.name)
         # Initialize the Network Traffic Utils Class.
         NetworkTrafficUtils(self.addr)
+        CTRL_TCP.set_CRITICAL_FLAG(False)
         self.ctrl_listener_thread = threading.Thread(target=self.wait_ctrl, daemon=False, name="CTRL_TCP_Listener")
         self.ctrl_listener_thread.start()
         self.logger.info("Initialized the CTRL_TCP instance with configuration parameters.")
+
+    def set_CRITICAL_FLAG(FLAG: bool) -> None:
+        filename = "CRITICAL.txt"
+        temp_filename = "CRITICAL.tmp"
+        with open(temp_filename, "w") as f:
+            f.write(str(FLAG))
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(temp_filename, filename)
+
+    def check_CRITICAL_FLAG() -> bool:
+        filename = "CRITICAL.txt"
+        if not os.path.exists(filename):
+            return False   
+        try:
+            with open(filename, "r") as f:
+                content = f.read().strip()
+                return content == "True"
+        except EOFError:
+            return False
 
     def _load_config(self, config_path: str) -> bool:
         """
@@ -804,10 +760,10 @@ class CTRL_TCP:
             if not isinstance(self.wafl_phase_params, dict):
                 self.logger.error("Invalid format for 'wafl_phase_params' in JSON. Dictionary required.")
                 return False
-            for key in ["batch_size", "learning_rate", "coefficiency"]:
+            for key in ["coefficiency"]:
                 if key not in self.wafl_phase_params:
                     raise ValueError(f"Missing required key '{key}' in wafl_phase_params")
-            self.timeout = 10.0  # dummy
+            self.timeout = 5.0  # dummy
             if not isinstance(self.timeout, float):
                 self.logger.error("Invalid format for 'wafl_devices.timeout' in JSON. Float required.")
                 return False
@@ -854,7 +810,7 @@ class CTRL_TCP:
 
         model_dir = f"./results/{self.experiment_id}"
         os.makedirs(model_dir, exist_ok=True)
-        self.model_sharing = ModelSharingUtils(agent_index, device_name, device_ip, self.p2p_port, self.timeout)
+        self.model_sharing = ModelSharingUtils(agent_index, device_name, device_ip, self.p2p_port, 60.0)
         self.model_learning = ModelLearningUtils(
             "./dataset",
             f"./results/{self.experiment_id}/model_instance",
@@ -903,26 +859,30 @@ class CTRL_TCP:
         This function should be called before starting the WAFL model training.
         """
         self.logger.info("Waiting for the control server to be ready...")
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        try:
             s.bind((self.addr, self.ctrl_port))
-            s.listen()
+            s.listen(1)
             self.logger.info(f"🔗 Socket bound at {self.addr}:{self.ctrl_port} and listening.")
 
             while self.fLISTENER_ACTIVE:
                 try:
                     conn, addr_info = s.accept()
-                    conn.settimeout(self.timeout)
-                    self.logger.info(f"📶 Connection Established with {addr_info[0]}:{addr_info[1]}.")
+                    try:
+                        conn.settimeout(self.timeout)
+                        self.logger.info(f"📶 Connection Established with {addr_info[0]}:{addr_info[1]}.")
 
-                    received_command = self._receive_command(conn)
+                        received_command = self._receive_command(conn)
 
-                    if received_command:
-                        if not self._process_command(received_command, conn):
-                            self.logger.warning(f"Failed to process command: '{received_command}'")
-                    else:
-                        self.logger.warning("No valid command received from client or reception failed.")
+                        if received_command:
+                            if not self._thread_command(received_command, conn):
+                                self.logger.warning(f"Failed to process command: '{received_command}'")
+                        else:
+                            self.logger.warning("No valid command received from client or reception failed.")
+                    finally:
+                        conn.shutdown(socket.SHUT_RDWR)
+                        conn.close()
 
-                    conn.close()
                     self.logger.info(f"Connection with {addr_info[0]}:{addr_info[1]} closed.")
 
                 except socket.timeout:
@@ -933,8 +893,11 @@ class CTRL_TCP:
                         self.logger.error(f"An error occurred in the socket listener: {str(exc)[:100]}...")
 
             self.logger.info("Control listener thread has been terminated.")
+        finally:
+            s.shutdown(socket.SHUT_RDWR)
+            s.close()
 
-    def _process_command(self, command_str: str, conn: socket.socket) -> bool:
+    def _thread_command(self, command_str: str, conn: socket.socket) -> bool:
         """
         Parses the command string and dispatches to appropriate functions.
         Returns:
@@ -1007,78 +970,95 @@ class CTRL_TCP:
                 return True
 
             elif main_command == "BEGIN":
-                if len(parts) != 4:
-                    self.logger.warning(
-                        f"Incorrect form of BEGIN command: {command_str}. Expected BEGIN-TYPE-NUMBER-ISO_DATETIME."
-                    )
-                    conn.sendall("ERROR\r\n".encode("utf-8"))
-                    return False
-                if self.learning_thread and self.learning_thread.is_alive():
-                    if self.current_epoch_number == parts[2] and self.current_epoch_type == parts[1]:
-                        conn.sendall("OK\r\n".encode("utf-8"))
-                        return True
-                    self.logger.warning("Cannot start new learning task. A task is already running.")
-                    conn.sendall("ERROR\r\n".encode("utf-8"))
-                    return False
-
-                sub_command = parts[1]
-                five_digit_number_str = parts[2]
-                epoch_start = datetime.datetime.fromisoformat(parts[3].replace("#", "-"))
-
-                if not (five_digit_number_str.isdigit() and len(five_digit_number_str) == 5):
-                    self.logger.warning(f"Invalid five-digit number format in BEGIN command: {command_str}")
+                if CTRL_TCP.BEGIN_PROC_FLAG:
+                    self.logger.warning("Cannot process new learning task. A task is already being processed.")
                     conn.sendall("ERROR\r\n".encode("utf-8"))
                     return False
                 try:
-                    self.traffic_thread = threading.Thread(
-                        target=self.model_learning.network_traffic_thread,
-                        daemon=False,
-                        args=(
-                            five_digit_number_str,
-                            sub_command,
-                            epoch_start,
-                        ),
-                    )
-                    self.traffic_thread.start()
-                except Exception as e:
-                    self.logger.error(f"Failed to start traffic thread: {e}")
-                    conn.sendall("ERROR\r\n".encode("utf-8"))
-                    return False
-                if sub_command == "SELF":
-                    try:
-                        self.learning_thread = threading.Thread(
-                            target=self._self_learn,
-                            daemon=False,
-                            args=(five_digit_number_str,),
-                            name=f"SelfLearn-{five_digit_number_str}",
+                    CTRL_TCP.BEGIN_PROC_FLAG = True
+                    if len(parts) != 4:
+                        self.logger.warning(
+                            f"Incorrect form of BEGIN command: {command_str}. Expected BEGIN-TYPE-NUMBER-ISO_DATETIME."
                         )
-                        self.learning_thread.start()
-                        conn.sendall("OK\r\n".encode("utf-8"))
-                        return True
-                    except Exception as e:
-                        self.logger.error(f"Failed to start self learning thread: {e}")
                         conn.sendall("ERROR\r\n".encode("utf-8"))
                         return False
-                elif sub_command == "WAFL":
-                    try:
-                        self.learning_thread = threading.Thread(
-                            target=self._wafl_learn,
-                            daemon=False,
-                            args=(five_digit_number_str,),
-                            name=f"WAFL_Learn_{five_digit_number_str}",
-                        )
-                        self.learning_thread.start()
-                        conn.sendall("OK\r\n".encode("utf-8"))
-                        return True
-                    except Exception as e:
-                        self.logger.error(f"Failed to start WAFL learning thread: {e}")
+                    if self.learning_thread and self.learning_thread.is_alive():
+                        if self.current_epoch_number == parts[2] and self.current_epoch_type == parts[1]:
+                            conn.sendall("OK\r\n".encode("utf-8"))
+                            return True
+                        self.logger.warning("Cannot start new learning task. A task is already running.")
                         conn.sendall("ERROR\r\n".encode("utf-8"))
                         return False
-                else:
-                    self.logger.warning(f"Unknown BEGIN subcommand: {sub_command} in command: {command_str}")
-                    conn.sendall("ERROR\r\n".encode("utf-8"))
-                    return False
 
+                    sub_command = parts[1]
+                    five_digit_number_str = parts[2]
+                    epoch_start = datetime.datetime.fromisoformat(parts[3].replace("#", "-"))
+
+                    if not (five_digit_number_str.isdigit() and len(five_digit_number_str) == 5):
+                        self.logger.warning(f"Invalid five-digit number format in BEGIN command: {command_str}")
+                        conn.sendall("ERROR\r\n".encode("utf-8"))
+                        return False
+                    
+                    # Temporary stop-gap measure.
+                    conn.sendall("ERROR\r\n".encode("utf-8"))
+
+                    try:
+                        self.traffic_thread = threading.Thread(
+                            target=self.model_learning.network_traffic_thread,
+                            daemon=False,
+                            args=(
+                                five_digit_number_str,
+                                sub_command,
+                                epoch_start,
+                            ),
+                        )
+                        self.traffic_thread.start()
+                    except Exception as e:
+                        self.logger.error(f"Failed to start traffic thread: {e}")
+                        #conn.sendall("ERROR\r\n".encode("utf-8"))
+                        return False
+                    if sub_command == "SELF":
+                        try:
+                            self.current_epoch_type = "SELF"
+                            self.current_epoch_number = five_digit_number_str
+                            self.learning_thread = threading.Thread(
+                                target=self._self_learn,
+                                daemon=False,
+                                args=(five_digit_number_str,),
+                                name=f"SelfLearn-{five_digit_number_str}"
+                            )
+                            self.learning_thread.start()
+                            self.model_sharing.update_model_instance(self.model_learning.model, "DETR", epoch=int(five_digit_number_str) - 1)
+                            #conn.sendall("OK\r\n".encode("utf-8"))
+                            return True
+                        except Exception as e:
+                            self.logger.error(f"Failed to start self learning thread: {e}")
+                            #conn.sendall("ERROR\r\n".encode("utf-8"))
+                            return False
+                    elif sub_command == "WAFL":
+                        try:
+                            self.current_epoch_type = "WAFL"
+                            self.current_epoch_number = five_digit_number_str
+                            self.learning_thread = threading.Thread(
+                                target=self._wafl_learn,
+                                daemon=False,
+                                args=(five_digit_number_str,),
+                                name=f"WAFL_Learn_{five_digit_number_str}",
+                            )
+                            self.learning_thread.start()
+                            self.model_sharing.update_model_instance(self.model_learning.model, "DETR", epoch=int(five_digit_number_str) - 1)
+                            #conn.sendall("OK\r\n".encode("utf-8"))
+                            return True
+                        except Exception as e:
+                            self.logger.error(f"Failed to start WAFL learning thread: {e}")
+                            #conn.sendall("ERROR\r\n".encode("utf-8"))
+                            return False
+                    else:
+                        self.logger.warning(f"Unknown BEGIN subcommand: {sub_command} in command: {command_str}")
+                        #conn.sendall("ERROR\r\n".encode("utf-8"))
+                        return False
+                finally:
+                    CTRL_TCP.BEGIN_PROC_FLAG = False
             else:
                 self.logger.warning(f"Unknown command received: {command_str}")
                 conn.sendall("ERROR\r\n".encode("utf-8"))
@@ -1094,20 +1074,20 @@ class CTRL_TCP:
         Format: EXEC-XXXX-YYYYY-Z or DONE-XXXX-YYYYY-Z
         """
         current_logs = self.status_logs.copy()
-        thread_status = "TBD"
+        process_status = "TBD"
         if self.learning_thread:
-            thread_status = "Active" if self.learning_thread.is_alive() else "Finished"
+            process_status = "Active" if self.learning_thread.is_alive() else "Finished"
         if self.traffic_thread:
-            thread_status = "Active" if self.traffic_thread.is_alive() else thread_status
-        current_logs.append(f"Learning Thread Status: {thread_status}")
+            process_status = "Active" if self.traffic_thread.is_alive() else process_status
+        current_logs.append(f"Learning Thread Status: {process_status}")
         if self.current_epoch_type is None or self.current_epoch_number is None:
             # Handle case where no epoch has run yet.
             return "DONE-NONE--1-0\r\n"
 
         log_line_count = len(self.status_logs)
-        if CTRL_TCP.CRITICAL_FLAG:
-            header = "CRITICAL"
-        elif self.is_epoch_running or (self.learning_thread and self.learning_thread.is_alive()):
+        if CTRL_TCP.check_CRITICAL_FLAG():
+            header = f"CRITICAL"
+        elif (self.learning_thread and self.learning_thread.is_alive()):
             # Format: EXEC-XXXX-YYYYY-Z
             header = f"EXEC-{self.current_epoch_type}-{self.current_epoch_number}-{log_line_count}"
         else:
