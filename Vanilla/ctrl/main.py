@@ -32,7 +32,7 @@ class WaflAgent:
         ctrl_port: int,
         config: Dict[str, Any],
         experiment_parameters: Dict[str, Any],
-        timeout: int = 10,
+        timeout: int = 5,
     ):
         self.agent_index = agent_index
         self.name = device_name
@@ -478,7 +478,8 @@ class WaflAgent:
         self.logger.debug(f"📤 Sending TCP command to {self.ip}:{self.ctrl_port}: {command.strip()}")
 
         try:
-            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            try:
                 s.settimeout(self.timeout)
                 s.connect((self.ip, self.ctrl_port))
                 s.sendall(command.encode("utf-8"))
@@ -489,10 +490,15 @@ class WaflAgent:
                     if not data:
                         break
                     response_parts.append(data)
+                    if data.endswith(b"\r\n"):
+                        break
 
                 full_response = b"".join(response_parts).decode("utf-8").strip()
                 self.logger.debug(f"📥 Received TCP response from {self.ip}:{self.ctrl_port}: {full_response}")
                 return True, full_response
+            finally:
+                s.shutdown(socket.SHUT_RDWR)
+                s.close()
 
         except socket.timeout:
             error_msg = f"⏰ TCP connection to {self.ip}:{self.ctrl_port} timed out after {self.timeout}s"
@@ -920,18 +926,19 @@ class ControlServer:
                     if not agent.begin_epoch(phase="SELF", epoch=epoch):
                         failed_commands.append(agent)
                 while len(failed_commands) > 0:
+                    time.sleep(1)
                     failed_commands_update = []
                     for agent in failed_commands:
                         if not agent.begin_epoch(phase="SELF", epoch=epoch):
                             failed_commands_update.append(agent)
                     failed_commands = failed_commands_update
-                    time.sleep(10)
                 if failed_commands:
                     raise RuntimeError(f"❌ Failed to start SELF epoch {epoch} on agents: {', '.join(failed_commands)}")
 
                 # Wait for completion
                 self._wait_for_all_agents_to_complete(current_epoch=epoch)
                 self.logger.info(f"✅ SELF Epoch {epoch}/{epochs['self']} completed successfully")
+                time.sleep(1)
 
             self.logger.info("🎉 All SELF training epochs completed successfully")
 
@@ -947,18 +954,19 @@ class ControlServer:
                     if not agent.begin_epoch(phase="WAFL", epoch=epoch):
                         failed_commands.append(agent)
                 while len(failed_commands) > 0:
+                    time.sleep(1)
                     failed_commands_update = []
                     for agent in failed_commands:
-                        if not agent.begin_epoch(phase="SELF", epoch=epoch):
+                        if not agent.begin_epoch(phase="WAFL", epoch=epoch):
                             failed_commands_update.append(agent)
                     failed_commands = failed_commands_update
-                    time.sleep(10)
                 if failed_commands:
                     raise RuntimeError(f"❌ Failed to start WAFL epoch {epoch} on agents: {', '.join(failed_commands)}")
 
                 # Wait for completion
                 self._wait_for_all_agents_to_complete(current_epoch=epoch)
                 self.logger.info(f"✅ WAFL Epoch {epoch}/{epochs['wafl']} completed successfully")
+                time.sleep(1)
 
             self.logger.info("🎉 All WAFL training epochs completed successfully")
             experiment_success = True
@@ -975,7 +983,7 @@ class ControlServer:
             status = "SUCCESS" if experiment_success else "FAILED"
             self.logger.info(f"🏁 Experiment {self.experiment_id} finished with status: {status}")
 
-    def _wait_for_all_agents_to_complete(self, current_epoch: int, poll_interval: int = 5, timeout: int = 3600):
+    def _wait_for_all_agents_to_complete(self, current_epoch: int, poll_interval: int = 10, timeout: int = 3600):
         """Polls agents until they all complete the current epoch."""
         self.logger.info(f"⏳ Waiting for all agents to complete epoch {current_epoch}")
         start_time = time.time()
