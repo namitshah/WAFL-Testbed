@@ -117,6 +117,7 @@ class ModelLearningUtils:
         ctrl_tcp: CTRL_TCP,
         experiment_id,
         wafl_phase_params: dict,
+        agent_index: int = -1,
     ) -> None:
         """
         Initialize the learning process instance.
@@ -497,7 +498,7 @@ class ModelSharingUtils:
                     time.sleep(1.0)
             self.logger.info("P2P listener thread has been terminated.")
 
-    def update_model_instance(self, LE_model: Any, metadata: str = "") -> None:
+    def update_model_instance(self, LE_model: Any, metadata: str = "", epoch: int = -1) -> None:
         """
         Updates the WAFL model instance that is
         to be dispatched.
@@ -670,7 +671,7 @@ class CTRL_TCP:
             if not isinstance(self.wafl_phase_params, dict):
                 self.logger.error("Invalid format for 'wafl_phase_params' in JSON. Dictionary required.")
                 return False
-            for key in ["batch_size", "learning_rate", "coefficiency"]:
+            for key in ["coefficiency"]:
                 if key not in self.wafl_phase_params:
                     raise ValueError(f"Missing required key '{key}' in wafl_phase_params")
             self.timeout = 5.0  # dummy
@@ -909,9 +910,6 @@ class CTRL_TCP:
                         conn.sendall("ERROR\r\n".encode("utf-8"))
                         return False
 
-                    # Temporary stop-gap measure.
-                    conn.sendall("ERROR\r\n".encode("utf-8"))
-
                     try:
                         self.traffic_thread = threading.Thread(
                             target=self.model_learning.network_traffic_thread,
@@ -925,7 +923,7 @@ class CTRL_TCP:
                         self.traffic_thread.start()
                     except Exception as e:
                         self.logger.error(f"Failed to start traffic thread: {e}")
-                        # conn.sendall("ERROR\r\n".encode("utf-8"))
+                        conn.sendall("ERROR\r\n".encode("utf-8"))
                         return False
                     if sub_command == "SELF":
                         try:
@@ -938,14 +936,12 @@ class CTRL_TCP:
                                 name=f"SelfLearn-{five_digit_number_str}",
                             )
                             self.learning_thread.start()
-                            self.model_sharing.update_model_instance(
-                                self.model_learning.model, "DETR", epoch=int(five_digit_number_str) - 1
-                            )
-                            # conn.sendall("OK\r\n".encode("utf-8"))
+                            self.model_sharing.update_model_instance(None, "Vanilla", epoch=int(five_digit_number_str) - 1)
+                            conn.sendall("OK\r\n".encode("utf-8"))
                             return True
                         except Exception as e:
                             self.logger.error(f"Failed to start self learning thread: {e}")
-                            # conn.sendall("ERROR\r\n".encode("utf-8"))
+                            conn.sendall("ERROR\r\n".encode("utf-8"))
                             return False
                     elif sub_command == "WAFL":
                         try:
@@ -958,18 +954,16 @@ class CTRL_TCP:
                                 name=f"WAFL_Learn_{five_digit_number_str}",
                             )
                             self.learning_thread.start()
-                            self.model_sharing.update_model_instance(
-                                self.model_learning.model, "DETR", epoch=int(five_digit_number_str) - 1
-                            )
-                            # conn.sendall("OK\r\n".encode("utf-8"))
+                            self.model_sharing.update_model_instance(None, "Vanilla", epoch=int(five_digit_number_str) - 1)
+                            conn.sendall("OK\r\n".encode("utf-8"))
                             return True
                         except Exception as e:
                             self.logger.error(f"Failed to start WAFL learning thread: {e}")
-                            # conn.sendall("ERROR\r\n".encode("utf-8"))
+                            conn.sendall("ERROR\r\n".encode("utf-8"))
                             return False
                     else:
                         self.logger.warning(f"Unknown BEGIN subcommand: {sub_command} in command: {command_str}")
-                        # conn.sendall("ERROR\r\n".encode("utf-8"))
+                        conn.sendall("ERROR\r\n".encode("utf-8"))
                         return False
                 finally:
                     CTRL_TCP.BEGIN_PROC_FLAG = False
