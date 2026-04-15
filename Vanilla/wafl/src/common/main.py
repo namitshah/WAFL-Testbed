@@ -222,7 +222,6 @@ class ModelLearningUtils:
             # Code for the Self-TRAIN epoch stage #
             # Code for the Self-TRAIN epoch stage #
             self.epoch_number += 1
-            self.model_sharing.update_model_instance(None, "Vanilla")
             SUCCESS = True
         except Exception as exc:
             self.logger.error(f"The following error occurred in self_learn: {str(exc)[:100]}...")
@@ -244,7 +243,7 @@ class ModelLearningUtils:
                 if peer_ip is None:
                     self.logger.error(f"Could not get IP for neighbour {neighbour}")
                     continue
-                received_model = self.model_sharing.request_model_from_peer(peer_ip, "&purpose=Vanilla")  # noqa: F841
+                received_model = self.model_sharing.request_model_from_peer(peer_ip, f"{str(int(five_digit_number_str) - 1)}")  # noqa: F841
                 # Code for Model Aggregation #
                 # Code for Model Aggregation #
                 # Code for Model Aggregation #
@@ -267,7 +266,7 @@ class ModelLearningUtils:
                 # Other code for the WAFL-Train epoch stage #
                 # Other code for the WAFL-Train epoch stage #
                 self.epoch_number += 1
-                self.model_sharing.update_model_instance(None, "Vanilla")
+                self.model_sharing.update_model_instance(None, "Vanilla", 0)
             if not SELF_LEARN_FLAG:
                 raise Exception("SELF-LEARNING ERROR")
             self.logger.info(f"✅ Completed the WAFL-Learning Epoch: {five_digit_number_str}")
@@ -323,6 +322,7 @@ class ModelSharingUtils:
         self.vMODEL_INSTANCE = None
         self.vMODEL_INSTANCE_CACHE = None
         self.vMODEL_METADATA = ""
+        self.vMODEL_EPOCH = 0
         self.fLISTENER_ACTIVE = True
         self.agent_index = index
         self.name = name
@@ -498,7 +498,7 @@ class ModelSharingUtils:
                     time.sleep(1.0)
             self.logger.info("P2P listener thread has been terminated.")
 
-    def update_model_instance(self, LE_model: Any, metadata: str = "", epoch: int = -1) -> None:
+    def update_model_instance(self, LE_model: Any, metadata: str = "", epoch: int = 0) -> None:
         """
         Updates the WAFL model instance that is
         to be dispatched.
@@ -509,6 +509,7 @@ class ModelSharingUtils:
         self.vMODEL_INSTANCE = copy.deepcopy(LE_model)
         self.vMODEL_INSTANCE_CACHE = None
         self.vMODEL_METADATA = metadata
+        self.vMODEL_EPOCH = epoch
 
     def request_model_from_peer(self, peer_IP: str, other_options: str = "") -> Any:
         """
