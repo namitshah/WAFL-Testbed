@@ -225,6 +225,7 @@ class ModelLearningUtils:
             SUCCESS = True
         except Exception as exc:
             self.logger.error(f"The following error occurred in self_learn: {str(exc)[:100]}...")
+            CTRL_TCP.set_CRITICAL_FLAG(True)
             SUCCESS = False
         return SUCCESS
 
@@ -273,6 +274,7 @@ class ModelLearningUtils:
             SUCCESS = True
         except Exception as exc:
             self.logger.error(f"The following error occurred in wafl_learn: {str(exc)[:100]}...")
+            CTRL_TCP.set_CRITICAL_FLAG(True)
             SUCCESS = False
         return SUCCESS
 
