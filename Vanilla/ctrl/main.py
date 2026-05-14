@@ -315,6 +315,9 @@ class WaflAgent:
             target_path = os.path.join(self.config["DEPLOYMENT_LOCATION"], self.config["PROJECT_NAME"])
             # Bug Fix: Create the results directory if it doesn't exist (encountered this twice).
             command_create_results = f"cd {target_path} && mkdir -p {os.path.join('results', experiment_id)}"
+            command_traffic_control = (
+                f"cd {target_path} && sudo -S -p '' chmod +x './config/traffic_control.sh' && sudo ./config/traffic_control.sh"
+            )
             command_tcpdump_install = "sudo -S -p '' apt-get install -y tcpdump"
             command_tcpdump_kill = "sudo -S -p '' pkill -f \"tcpdump\""
             tcpdump_pcap_file = os.path.join("/tmp", "tcpdump_")
@@ -424,6 +427,17 @@ class WaflAgent:
                     raise RuntimeError(f"❌ Failed to kill the zombie processes: {error_msg}")
                 else:
                     self.logger.info("🔪 Tcpdump zombies cleaned up successfully! ")
+
+                # Start traffic-control process on the agent:
+                stdin, stdout, stderr = ssh.exec_command(command_traffic_control)
+                stdin.write(ssh_password + "\n")
+                stdin.flush()
+                exit_status = stdout.channel.recv_exit_status()
+                if exit_status != 0:
+                    error_msg = stderr.read().decode().strip()
+                    raise RuntimeError(f"❌ Failed to start traffic-control: {error_msg}")
+                else:
+                    self.logger.info("✅ traffic-control started up successfully! ")
 
                 # Start tcpdump process on the agent:
                 stdin, stdout, stderr = ssh.exec_command(command_tcpdump)
