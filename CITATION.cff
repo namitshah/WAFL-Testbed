@@ -1,0 +1,19 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: WAFL Testbed
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Namit
+    family-names: Shah
+    email: namitvshah@g.ecc.u-tokyo.ac.jp
+    affiliation: University of Tokyo
+repository-code: 'https://github.com/namitshah/WAFL-Testbed'
+url: 'https://github.com/namitshah/WAFL-Testbed'
+license: GPL-3.0
+commit: 01edefa8d54918c22b6614233bf32c5f3b623c19
+date-released: '2026-05-08'
